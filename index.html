@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUXTAIN - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="legal.html">Legal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <img src="assets/images/Index_background.jpeg" alt="CruxTain Background" class="header-bg">
+            <h1>CRUXTAIN™</h1>
+            <img src="assets/gifs/logo.gif" alt="CruxTain Logo GIF" class="header-gif">
+        </div>
+
+        <p>A “suite“ or “luxury hotel“ of CRUXTAIN™ properties for Blender 3.6, UPBGE 3.6 addons, graphic art, illustration, 3D modeling, game development, Storyboarding, Effects creation, books, free theology arts and resources and more to come... Until Gumroad is set up, this site is a portfolio.</p>
+    </header>
+
+    <!-- Featured Projects Section -->
+    <section>
+        <h2>Featured Projects</h2>
+        <div id="featuredProjects"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p> 2025 CruxTain™</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+
+    <script>
+        const featuredProjects = ['triAniCat', 'triBluePrint', 'triMazeGen'];
+
+        const container = document.getElementById('featuredProjects');
+        container.innerHTML = '';
+
+        featuredProjects.forEach(id => {
+            if (productsData[id]) {
+                const prod = productsData[id];
+                const projectHTML = `
+                    <div class="project">
+                        <div class="project-media">
+                            <img src="${prod.image}" alt="${prod.title} Image" class="project-image">
+                            <img src="${prod.gif}" alt="${prod.title} GIF" class="project-gif">
+                        </div>
+
+                        <div class="project-info">
+                            <p><strong>${prod.title}</strong> — ${prod.description}</p>
+                            <a href="products.html?product=${id}" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += projectHTML;
+            }
+        });
+    </script>
+
+</body>
+</html>
