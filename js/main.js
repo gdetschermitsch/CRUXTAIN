@@ -33,7 +33,7 @@ const productsData = {
     // Object Tools
     triCombine: {
         title: "Tri-Combine",
-        description: "The Tri-Carver add-on for Blender 3.6 streamlines non-destructive mesh carving workflows by providing a set of specialized operators that allow users to quickly subtract, cut, and manipulate complex shapes directly in Edit Mode. Its operators enable precise control over carving operations without leaving the editing context, making complex mesh modifications faster and more efficient.",
+        description: "Tri-Combine is a streamlined Boolean-combination tool for Blender 3.6 that lets you merge, subtract, or intersect multiple selected objects directly into the active object with a single action. It automatically handles mesh conversion, temporary duplicates, modifier application, and cleanup, and it gives you the choice to preserve your original models or perform destructive merges. The add-on wraps all this logic in a simple UI panel, turning complex Boolean workflows into a fast, reliable one-click process.",
         image: "assets/images/triCombine.jpeg",
         gif: "assets/gifs/triCombine.gif",
         link: "#"
@@ -268,3 +268,4 @@ if (document.getElementById('productDisplay')) {
     displayProduct();
 }
 generateAllProducts();
+
