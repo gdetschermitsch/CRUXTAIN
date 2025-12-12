@@ -11,7 +11,7 @@ const productsData = {
         description: "The Tri-IconMaker addon for Blender 3.6, developed by CRUX-TAIN™, provides a streamlined interface for creating, managing, and using custom icons within Blender’s UI. It maintains a dedicated folder for storing PNG icons and a preview collection for efficient access. Users can import new icons, rename existing ones, and permanently delete unwanted icons through intuitive operators. The addon automatically loads and unloads icons as needed, ensuring that changes are reflected in Blender’s interface. All icons are displayed in a sidebar panel in the 3D View, where users can quickly manage their library and apply custom icons to their own addons using the custom_icon helper function. This makes it a centralized solution for integrating personalized visuals into Blender’s workflow..",
         image: "assets/images/triIconMaker.jpeg",
         gif: "assets/gifs/triIconMaker.gif",
-        link: "https://gdetchermitsch.gumroad.com/l/Tri_ModifierLink?_gl=1*1f2z6pw*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjY1MTUkajU5JGwwJGgw"
+        link: "https://gdetchermitsch.gumroad.com/l/Tri_IconMaker?_gl=1*ihh42*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcwODQkajUwJGwwJGgw"
     },
 
     // Edit Tools
@@ -20,14 +20,14 @@ const productsData = {
         description: "The Tri-EditTools add-on for Blender 3.6, authored by CRUX-TAIN™, provides a comprehensive suite of mesh editing utilities all accessible from a single N-panel in the 3D View. It consolidates common edit mode operations, including selection tools (box select, edge loops/rings, random, intersecting, loose geometry, interior faces, faces by sides), mesh cleanup tools (merge by distance, mark/clear seams and sharp edges, recalculate normals, clear UVs, fix flipped normals), and face/geometry modification operators (fill holes, poke faces, tris-to-quads conversion, subdivide, separate by selection, grid fill, and bridge loops). Additional tools include mirrored selection across axes, measurement, annotation, loop cut, and knife operations. The add-on also features a Hole Manager panel to navigate, select, and manage mesh holes efficiently. It integrates optional custom icons for a visually organized interface and is designed to streamline repetitive edit-mode tasks, making it a powerful utility for mesh modeling workflow optimization.",
         image: "assets/images/triEditTools.jpeg",
         gif: "assets/gifs/triEditTools.gif",
-        link: "#"
+        link: "https://gdetchermitsch.gumroad.com/l/Tri_EditTools?_gl=1*1htvkdz*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcwOTEkajQzJGwwJGgw"
     },
     triCarver: {
         title: "Tri-Carver",
         description: "The Tri-Carver add-on for Blender 3.6, authored by CRUX-TAIN™, is a mesh editing tool that enables users to apply Boolean Difference operations directly in Edit Mode using a selected carver object. It provides an operator to perform the Boolean difference on the active object while optionally hiding or deleting the carver after application, configurable through persistent add-on preferences. The add-on includes a dedicated UI panel under the TriEditTools sidebar for easy access, displaying a toggle for the hide/delete behavior and a button to execute the Boolean operation. Tri-Carver streamlines non-destructive mesh carving workflows by allowing quick subtraction of complex shapes without leaving Edit Mode, and integrates custom icons if available.",
         image: "assets/images/triCarver.jpeg",
         gif: "assets/gifs/triCarver.gif",
-        link: "#"
+        link: "https://gdetchermitsch.gumroad.com/l/Tri_Carver?_gl=1*1w6ibx0*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcxNjIkajYwJGwwJGgw"
     },
 
     // Object Tools
@@ -36,21 +36,21 @@ const productsData = {
         description: "Tri-Combine is a streamlined Boolean-combination tool for Blender 3.6 that lets you merge, subtract, or intersect multiple selected objects directly into the active object with a single action. It automatically handles mesh conversion, temporary duplicates, modifier application, and cleanup, and it gives you the choice to preserve your original models or perform destructive merges. The add-on wraps all this logic in a simple UI panel, turning complex Boolean workflows into a fast, reliable one-click process.",
         image: "assets/images/triCombine.jpeg",
         gif: "assets/gifs/triCombine.gif",
-        link: "#"
+        link: "https://gdetchermitsch.gumroad.com/l/Tri_Combine?_gl=1*1xcamjq*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcxODMkajM5JGwwJGgw"
     },
     triCurserTools: {
         title: "Tri-CurserTools",
         description: "Tri-Cursor Tools gives Blender 3.6 a compact little command center for anything involving the 3D cursor and object transforms. It lets you snap the cursor to the world origin, to a selection, or move selected objects straight to the cursor with one click. It also handles object housekeeping by applying location, rotation, and scale instantly, and gives quick access to origin management—either snapping an object’s origin to the cursor or recentering it on its own geometry. All of this is wrapped into a clean Object-Mode-only panel inside the N-sidebar under Tri-ObjectTools, keeping cursor and transform workflow fast, tidy, and pleasantly frictionless—almost like giving Blender a little spatial teleporter console.",
         image: "assets/images/triCurserTools.jpeg",
         gif: "assets/gifs/triCurserTools.gif",
-        link: "#"
+        link: "https://gdetchermitsch.gumroad.com/l/Tri_CursorTools?_gl=1*1xd9lt3*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcxODYkajM2JGwwJGgw"
     },
     triModifierLink: {
         title: "Tri-ModifierLink",
         description: "Tri-ModifierLink is built to spare you the tedium of recreating modifier stacks by hand. It lets you pick any object in your scene that already has modifiers and copy either its entire stack or a single chosen modifier onto another compatible object. The add-on automatically filters out invalid targets, handles all safe transferable properties, and reports exactly what it applied. Everything lives neatly in the Tri-ObjectTools sidebar: choose a source, choose a target, select “Link All Modifiers” or pick one modifier from a dropdown and transfer it instantly. It’s essentially a fast, clean way to propagate complex setups across multiple objects without touching the modifier panel, keeping your workflow nimble and your scene consistent.",
         image: "assets/images/triModifierLink.jpeg",
         gif: "assets/gifs/triModifierLink.gif",
-        link: "#"
+        link: "https://gdetchermitsch.gumroad.com/l/Tri_ModifierLink?_gl=1*ipzm2q*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcyNDUkajYwJGwwJGgw"
     },
     triPBSDF: {
         title: "Tri-PBSDF",
@@ -268,6 +268,7 @@ if (document.getElementById('productDisplay')) {
     displayProduct();
 }
 generateAllProducts();
+
 
 
 
