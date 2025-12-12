@@ -11,7 +11,7 @@ const productsData = {
         description: "The Tri-IconMaker addon for Blender 3.6, developed by CRUX-TAIN™, provides a streamlined interface for creating, managing, and using custom icons within Blender’s UI. It maintains a dedicated folder for storing PNG icons and a preview collection for efficient access. Users can import new icons, rename existing ones, and permanently delete unwanted icons through intuitive operators. The addon automatically loads and unloads icons as needed, ensuring that changes are reflected in Blender’s interface. All icons are displayed in a sidebar panel in the 3D View, where users can quickly manage their library and apply custom icons to their own addons using the custom_icon helper function. This makes it a centralized solution for integrating personalized visuals into Blender’s workflow..",
         image: "assets/images/triIconMaker.jpeg",
         gif: "assets/gifs/triIconMaker.gif",
-        link: "https://gdetchermitsch.gumroad.com/l/Tri_IconMaker#"
+        link: "https://gdetchermitsch.gumroad.com/l/Tri_ModifierLink?_gl=1*1f2z6pw*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjY1MTUkajU5JGwwJGgw"
     },
 
     // Edit Tools
@@ -268,6 +268,7 @@ if (document.getElementById('productDisplay')) {
     displayProduct();
 }
 generateAllProducts();
+
 
 
 
