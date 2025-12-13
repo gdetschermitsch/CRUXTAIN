@@ -57,7 +57,7 @@ const productsData = {
         description: "Tri-PBSDF is a material-tuning add-on built to give Blender 3.6 users immediate, hands-on control over Principled BSDF settings without the usual node-tree digging. It adds live-updating sliders for specular, roughness, emission, alpha, and emission color, while also enabling optional linking of image texture nodes directly into the shader’s emission and alpha inputs. It includes a one-click bump-chain generator that automatically builds and connects a ColorRamp → Bump → Normal pipeline from any available image texture. The add-on provides quick-toggle operators for backface culling, screen-space refraction, and alpha-blend material modes, plus convenient operators to apply emission and alpha texture nodes. Everything is packed into an N-Panel interface under Tri-ObjectTools, offering a streamlined workflow for artists who want to shape materials quickly while keeping node graphs clean and automatically configured.",
         image: "assets/images/triPBSDF.jpeg",
         gif: "assets/gifs/triPBSDF.gif",
-        link: "#"
+        link: "https://gdetchermitsch.gumroad.com/l/Tri_PBSDF?_gl=1*d85azw*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU2MDQwMTEkbzExJGcxJHQxNzY1NjA0MzAzJGo2MCRsMCRoMA.."
     },
     triUV: {
         title: "Tri-UV",
@@ -268,6 +268,7 @@ if (document.getElementById('productDisplay')) {
     displayProduct();
 }
 generateAllProducts();
+
 
 
 
