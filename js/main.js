@@ -277,6 +277,12 @@ function getQueryParam(param) {
   return urlParams.get(param);
 }
 
+const featuredConfig = {
+  current: "triBluePrint",
+  project: "projectsPlaceholder1",
+  product: "triAniCat"
+};
+
 function getProductsByCategory(categoryKey) {
   return Object.entries(productsData)
     .filter(([, product]) => product.category === categoryKey)
@@ -294,39 +300,46 @@ function createMediaMarkup(prod) {
   return `<div class="project-media">${imageMarkup}${gifMarkup}</div>`;
 }
 
-function createActionMarkup(prod, id) {
+function getInternalDetailHref(prod, id) {
+  if (prod.category === "projects") {
+    return `projects.html?project=${id}`;
+  }
+  return `products.html?product=${id}`;
+}
+
+function createActionMarkup(prod, id, label = "View Product") {
   if (prod.placeholder || !prod.link || prod.link === "#") {
     return `<span class="button-like disabled-link">Coming Soon</span>`;
   }
 
-  return `<a href="products.html?product=${id}" class="button-link">View Product</a>`;
+  return `<a href="${getInternalDetailHref(prod, id)}" class="button-link">${label}</a>`;
 }
 
 function displayProduct() {
   const productId = getQueryParam("product");
-  const container = document.getElementById("productDisplay");
-  if (!container) return;
+  const projectId = getQueryParam("project");
+  const activeId = productId || projectId;
+  const container = document.getElementById("productDisplay") || document.getElementById("projectsContainer");
+  if (!container || !activeId) return false;
+  if (!productsData[activeId]) return false;
 
-  if (productId && productsData[productId]) {
-    const prod = productsData[productId];
-    const externalLink = prod.link && prod.link !== "#"
-      ? `<p><a href="${prod.link}" target="_blank" rel="noopener noreferrer" class="button-link">Download / Learn More</a></p>`
-      : `<p><span class="button-like disabled-link">Coming Soon</span></p>`;
+  const prod = productsData[activeId];
+  const externalLink = prod.link && prod.link !== "#"
+    ? `<p><a href="${prod.link}" target="_blank" rel="noopener noreferrer" class="button-link">Download / Learn More</a></p>`
+    : `<p><span class="button-like disabled-link">Coming Soon</span></p>`;
 
-    container.innerHTML = `
-      <article class="project single-product-card">
-        <div class="project-info">
-          <p class="category-tag">${categoryMeta[prod.category].title}</p>
-          <h2>${prod.title}</h2>
-          <p>${prod.description}</p>
-          ${externalLink}
-        </div>
-        ${createMediaMarkup(prod)}
-      </article>
-    `;
-  } else {
-    container.innerHTML = `<p class="empty-state">Select a product below to view its full details.</p>`;
-  }
+  container.innerHTML = `
+    <article class="project single-product-card">
+      <div class="project-info">
+        <p class="category-tag">${categoryMeta[prod.category].title}</p>
+        <h2>${prod.title}</h2>
+        <p>${prod.description}</p>
+        ${externalLink}
+      </div>
+      ${createMediaMarkup(prod)}
+    </article>
+  `;
+  return true;
 }
 
 function normalizeSearchValue(value) {
@@ -349,13 +362,14 @@ function productMatchesSearch(prod, searchTerm, categoryKey) {
 }
 
 function createProductCardMarkup(prod) {
+  const label = prod.category === "projects" ? "View Project" : "View Product";
   return `
     <article class="project">
       ${createMediaMarkup(prod)}
       <div class="project-info">
         <h3>${prod.title}</h3>
         <p>${prod.description}</p>
-        ${createActionMarkup(prod, prod.id)}
+        ${createActionMarkup(prod, prod.id, label)}
       </div>
     </article>
   `;
@@ -428,6 +442,8 @@ function generateProjectsPage() {
   const container = document.getElementById("projectsContainer");
   if (!container) return;
 
+  if (displayProduct()) return;
+
   const meta = categoryMeta.projects;
   const items = getProductsByCategory("projects");
   const itemsMarkup = items.map((prod) => createProductCardMarkup(prod)).join("");
@@ -445,6 +461,38 @@ function generateProjectsPage() {
   `;
 }
 
+function createFeaturedCardMarkup(prod, label) {
+  return `
+    <article class="project featured-card">
+      ${createMediaMarkup(prod)}
+      <div class="project-info">
+        <p class="category-tag">${label}</p>
+        <h3>${prod.title}</h3>
+        <p>${prod.description}</p>
+        ${createActionMarkup(prod, prod.id, prod.category === "projects" ? "View Project" : "View Product")}
+      </div>
+    </article>
+  `;
+}
+
+function renderHomeFeatured() {
+  const container = document.getElementById("featuredProjects");
+  if (!container) return;
+
+  const ids = [featuredConfig.current, featuredConfig.project, featuredConfig.product].filter(Boolean);
+  const cards = ids
+    .map((id, index) => {
+      const prod = productsData[id];
+      if (!prod) return "";
+      const label = index === 0 ? "Current Feature" : (prod.category === "projects" ? "Project Feature" : "Product Feature");
+      return createFeaturedCardMarkup({ id, ...prod }, label);
+    })
+    .filter(Boolean)
+    .join("");
+
+  container.innerHTML = cards || `<article class="project no-results-card"><div class="project-info"><h3>No featured items yet</h3></div></article>`;
+}
+
 function setActiveNav() {
   const currentPage = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
   document.querySelectorAll("nav a").forEach((link) => {
@@ -455,11 +503,11 @@ function setActiveNav() {
   });
 }
 
-if (document.getElementById("productDisplay")) {
+document.addEventListener("DOMContentLoaded", () => {
   displayProduct();
-}
-
-generateAllProducts();
-initProductSearch();
-generateProjectsPage();
-setActiveNav();
+  generateAllProducts();
+  initProductSearch();
+  generateProjectsPage();
+  renderHomeFeatured();
+  setActiveNav();
+});
