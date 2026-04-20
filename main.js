@@ -468,7 +468,7 @@ function generateAllProducts(searchTerm = "") {
       <div class="category-header collapsible-header" role="button" aria-expanded="false" tabindex="0">
         <div class="category-header-inner">
           <h2>${meta.title}</h2>
-          <span class="category-toggle-indicator">▼</span>
+          <span class="category-toggle-indicator">▶</span>
         </div>
         <p>${meta.description}</p>
       </div>
@@ -484,7 +484,7 @@ function generateAllProducts(searchTerm = "") {
     const toggleCategory = () => {
       const isCollapsed = grid.classList.toggle("collapsed");
       header.setAttribute("aria-expanded", (!isCollapsed).toString());
-      indicator.textContent = isCollapsed ? "▶" : "▼";
+      indicator.textContent = isCollapsed ? "▼" : "▶";
     };
 
     header.addEventListener("click", toggleCategory);
