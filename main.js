@@ -465,7 +465,7 @@ function generateAllProducts(searchTerm = "") {
     visibleCount += items.length;
 
     categorySection.innerHTML = `
-      <div class="category-header collapsible-header" role="button" aria-expanded="true" tabindex="0">
+      <div class="category-header collapsible-header" role="button" aria-expanded="false" tabindex="0">
         <div class="category-header-inner">
           <h2>${meta.title}</h2>
           <span class="category-toggle-indicator">▼</span>
