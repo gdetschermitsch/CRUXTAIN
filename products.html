@@ -5,7 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRUXTAIN - Products</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="CRUXTAIN.ico" type="image/x-icon" />
+  <style>
+    /* Surgical category toggle enhancement */
+    .category-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .category-toggle:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+
+    .category-toggle-indicator {
+      flex: 0 0 auto;
+      font-size: 0.95em;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .category-section.is-collapsed .category-toggle-indicator {
+      transform: rotate(-90deg);
+    }
+
+    .category-content[hidden] {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -49,5 +86,94 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const productsContainer = document.getElementById('productsContainer');
+      if (!productsContainer) return;
+
+      const headingSelectors = 'h2, h3, h4, .category-title, .category-heading, [data-category-title]';
+      const processedFlag = 'categoryToggleReady';
+
+      function slugify(value) {
+        return String(value || 'category')
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, '') || 'category';
+      }
+
+      function buildToggle(section, heading, content) {
+        if (!heading || !content || section.dataset[processedFlag] === 'true') return;
+
+        const headingText = heading.textContent.trim() || 'Category';
+        const sectionIdBase = slugify(headingText);
+        const contentId = `category-content-${sectionIdBase}-${Math.random().toString(36).slice(2, 7)}`;
+
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'category-toggle';
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-controls', contentId);
+        toggle.innerHTML = `
+          <span class="category-toggle-label"></span>
+          <span class="category-toggle-indicator" aria-hidden="true">▾</span>
+        `;
+        toggle.querySelector('.category-toggle-label').textContent = headingText;
+
+        heading.textContent = '';
+        heading.appendChild(toggle);
+
+        section.classList.add('category-section');
+        content.classList.add('category-content');
+        content.id = contentId;
+
+        toggle.addEventListener('click', function () {
+          const isCollapsed = section.classList.toggle('is-collapsed');
+          content.hidden = isCollapsed;
+          toggle.setAttribute('aria-expanded', String(!isCollapsed));
+        });
+
+        section.dataset[processedFlag] = 'true';
+      }
+
+      function enhanceCategorySections() {
+        const directChildren = Array.from(productsContainer.children).filter(Boolean);
+
+        directChildren.forEach((child) => {
+          if (!(child instanceof HTMLElement)) return;
+          if (child.dataset[processedFlag] === 'true') return;
+
+          let heading = null;
+          let content = null;
+
+          if (child.matches('.category-section, .product-category, [data-category], .category-group')) {
+            heading = child.querySelector(':scope > ' + headingSelectors) || child.querySelector(headingSelectors);
+            content = Array.from(child.children).find(el => el !== heading) || null;
+          } else {
+            heading = child.matches(headingSelectors) ? child : child.querySelector(':scope > ' + headingSelectors);
+            if (heading) {
+              const sectionKids = Array.from(child.children);
+              content = sectionKids.find(el => el !== heading) || null;
+            }
+          }
+
+          if (!heading || !content) return;
+          buildToggle(child, heading, content);
+        });
+      }
+
+      const observer = new MutationObserver(() => {
+        enhanceCategorySections();
+      });
+
+      observer.observe(productsContainer, { childList: true, subtree: true });
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', enhanceCategorySections);
+      } else {
+        enhanceCategorySections();
+      }
+    })();
+  </script>
 </body>
 </html>
