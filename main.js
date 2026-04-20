@@ -3,7 +3,7 @@
 // Categorized products + placeholders
 // ========================
 
-const categoryOrder = [ "addons", "writings", "html5", "videoGameMods" ];
+const categoryOrder = ["addons", "writings", "html5", "videoGameMods"];
 
 const categoryMeta = {
   addons: {
@@ -16,7 +16,7 @@ const categoryMeta = {
   },
   html5: {
     title: "HTML5 Programs and Games",
-    description: "Interactive tools, browser programs, and game projects.\nPlaceholder section until live web links are added."
+    description: "Interactive tools, browser programs, and game projects. Placeholder section until live web links are added."
   },
   videoGameMods: {
     title: "Video Game Mods",
@@ -24,7 +24,7 @@ const categoryMeta = {
   },
   projects: {
     title: "Projects",
-    description: "Coming-soon products, trailers, updates, and CRUXTAIN news.\nPlaceholder section until video clips and summaries are added."
+    description: "Coming-soon products, trailers, updates, and CRUXTAIN news. Placeholder section until video clips and summaries are added."
   }
 };
 
@@ -33,7 +33,7 @@ const productsData = {
   triIconMaker: {
     category: "addons",
     title: "Tri-IconMaker",
-    description: "The Tri-IconMaker addon for Blender 3.6, developed by CRUX-TAIN™, provides a streamlined interface for creating, managing, and using custom icons within Blender’s UI. It maintains a dedicated folder for storing PNG icons and a preview collection for efficient access.\nUsers can import new icons, rename existing ones, and permanently delete unwanted icons through intuitive operators. The addon automatically loads and unloads icons as needed, ensuring that changes are reflected in Blender’s interface. All icons are displayed in a sidebar panel in the 3D View, where users can quickly manage their library and apply custom icons to their own addons using the custom_icon helper function.\nThis makes it a centralized solution for integrating personalized visuals into Blender’s workflow.",
+    description: "The Tri-IconMaker addon for Blender 3.6, developed by CRUX-TAIN™, provides a streamlined interface for creating, managing, and using custom icons within Blender’s UI. It maintains a dedicated folder for storing PNG icons and a preview collection for efficient access. Users can import new icons, rename existing ones, and permanently delete unwanted icons through intuitive operators. The addon automatically loads and unloads icons as needed, ensuring that changes are reflected in Blender’s interface. All icons are displayed in a sidebar panel in the 3D View, where users can quickly manage their library and apply custom icons to their own addons using the custom_icon helper function. This makes it a centralized solution for integrating personalized visuals into Blender’s workflow.",
     image: "assets/images/triIconMaker.jpeg",
     gif: "assets/gifs/triIconMaker.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_IconMaker?_gl=1*ihh42*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcwODQkajUwJGwwJGgw"
@@ -42,7 +42,7 @@ const productsData = {
   triEditTools: {
     category: "addons",
     title: "Tri-EditTools",
-    description: "The Tri-EditTools add-on for Blender 3.6, authored by CRUX-TAIN™, provides a comprehensive suite of mesh editing utilities all accessible from a single N-panel in the 3D View.\nIt consolidates common edit mode operations, including selection tools, mesh cleanup tools, and face and geometry modification operators. Additional tools include mirrored selection across axes, measurement, annotation, loop cut, and knife operations.\nThe add-on also features a Hole Manager panel to navigate, select, and manage mesh holes efficiently.",
+    description: "The Tri-EditTools add-on for Blender 3.6, authored by CRUX-TAIN™, provides a comprehensive suite of mesh editing utilities all accessible from a single N-panel in the 3D View. It consolidates common edit mode operations, including selection tools, mesh cleanup tools, and face and geometry modification operators. Additional tools include mirrored selection across axes, measurement, annotation, loop cut, and knife operations. The add-on also features a Hole Manager panel to navigate, select, and manage mesh holes efficiently.",
     image: "assets/images/triEditTools.jpeg",
     gif: "assets/gifs/triEditTools.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_EditTools?_gl=1*1htvkdz*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcwOTEkajQzJGwwJGgw"
@@ -51,7 +51,7 @@ const productsData = {
   triCarver: {
     category: "addons",
     title: "Tri-Carver",
-    description: "The Tri-Carver add-on for Blender 3.6, authored by CRUX-TAIN™, is a mesh editing tool that enables users to apply Boolean Difference operations directly in Edit Mode using a selected carver object.\nIt provides an operator to perform the Boolean difference on the active object while optionally hiding or deleting the carver after application.\nTri-Carver streamlines non-destructive mesh carving workflows by allowing quick subtraction of complex shapes without leaving Edit Mode.",
+    description: "The Tri-Carver add-on for Blender 3.6, authored by CRUX-TAIN™, is a mesh editing tool that enables users to apply Boolean Difference operations directly in Edit Mode using a selected carver object. It provides an operator to perform the Boolean difference on the active object while optionally hiding or deleting the carver after application. Tri-Carver streamlines non-destructive mesh carving workflows by allowing quick subtraction of complex shapes without leaving Edit Mode.",
     image: "assets/images/triCarver.jpeg",
     gif: "assets/gifs/triCarver.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_Carver?_gl=1*1w6ibx0*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcxNjIkajYwJGwwJGgw"
@@ -60,7 +60,7 @@ const productsData = {
   triCombine: {
     category: "addons",
     title: "Tri-Combine",
-    description: "Tri-Combine is a streamlined Boolean-combination tool for Blender 3.6 that lets you merge, subtract, or intersect multiple selected objects directly into the active object with a single action.\nIt automatically handles mesh conversion, temporary duplicates, modifier application, and cleanup, and it gives you the choice to preserve your original models or perform destructive merges.",
+    description: "Tri-Combine is a streamlined Boolean-combination tool for Blender 3.6 that lets you merge, subtract, or intersect multiple selected objects directly into the active object with a single action. It automatically handles mesh conversion, temporary duplicates, modifier application, and cleanup, and it gives you the choice to preserve your original models or perform destructive merges.",
     image: "assets/images/triCombine.jpeg",
     gif: "assets/gifs/triCombine.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_Combine?_gl=1*1xcamjq*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcxODMkajM5JGwwJGgw"
@@ -69,7 +69,7 @@ const productsData = {
   triCurserTools: {
     category: "addons",
     title: "Tri-CursorTools",
-    description: "Tri-Cursor Tools gives Blender 3.6 a compact little command center for anything involving the 3D cursor and object transforms.\nIt lets you snap the cursor to the world origin, to a selection, or move selected objects straight to the cursor with one click.\nIt also handles object housekeeping by applying location, rotation, and scale instantly, and gives quick access to origin management.",
+    description: "Tri-Cursor Tools gives Blender 3.6 a compact little command center for anything involving the 3D cursor and object transforms. It lets you snap the cursor to the world origin, to a selection, or move selected objects straight to the cursor with one click. It also handles object housekeeping by applying location, rotation, and scale instantly, and gives quick access to origin management.",
     image: "assets/images/triCurserTools.jpeg",
     gif: "assets/gifs/triCurserTools.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_CursorTools?_gl=1*1xd9lt3*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcxODYkajM2JGwwJGgw"
@@ -78,7 +78,7 @@ const productsData = {
   triModifierLink: {
     category: "addons",
     title: "Tri-ModifierLink",
-    description: "Tri-ModifierLink is built to spare you the tedium of recreating modifier stacks by hand.\nIt lets you pick any object in your scene that already has modifiers and copy either its entire stack or a single chosen modifier onto another compatible object.",
+    description: "Tri-ModifierLink is built to spare you the tedium of recreating modifier stacks by hand. It lets you pick any object in your scene that already has modifiers and copy either its entire stack or a single chosen modifier onto another compatible object.",
     image: "assets/images/triModifierLink.jpeg",
     gif: "assets/gifs/triModifierLink.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_ModifierLink?_gl=1*ipzm2q*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcyNDUkajYwJGwwJGgw"
@@ -87,7 +87,7 @@ const productsData = {
   triPBSDF: {
     category: "addons",
     title: "Tri-PBSDF",
-    description: "Tri-PBSDF is a material-tuning add-on built to give Blender 3.6 users immediate, hands-on control over Principled BSDF settings without the usual node-tree digging.\nIt adds live-updating sliders for specular, roughness, emission, alpha, and emission color, plus quick-toggle operators for material display behaviors.",
+    description: "Tri-PBSDF is a material-tuning add-on built to give Blender 3.6 users immediate, hands-on control over Principled BSDF settings without the usual node-tree digging. It adds live-updating sliders for specular, roughness, emission, alpha, and emission color, plus quick-toggle operators for material display behaviors.",
     image: "assets/images/triPBSDF.jpeg",
     gif: "assets/gifs/triPBSDF.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_PBSDF?_gl=1*d85azw*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU2MDQwMTEkbzExJGcxJHQxNzY1NjA0MzAzJGo2MCRsMCRoMA.."
@@ -105,7 +105,7 @@ const productsData = {
   triStamp: {
     category: "addons",
     title: "Tri-Stamp",
-    description: "Tri-Stamp is a texture-painting companion built to turn any PNG into a fully formed Blender brush, complete with size, rotation, falloff, and placement controls.\nIt lets you load or swap PNGs on the fly, generate new brushes with custom names, and refine image properties directly in Blender.",
+    description: "Tri-Stamp is a texture-painting companion built to turn any PNG into a fully formed Blender brush, complete with size, rotation, falloff, and placement controls. It lets you load or swap PNGs on the fly, generate new brushes with custom names, and refine image properties directly in Blender.",
     image: "assets/images/triStamp.jpeg",
     gif: "assets/gifs/triStamp.gif",
     link: "#"
@@ -123,7 +123,7 @@ const productsData = {
   triAniCat: {
     category: "addons",
     title: "Tri-AniCat",
-    description: "The Tri-AniCat™ Blender 3.6 add-on is a procedural FK animation tool designed for detailed, per-axis control of armature bones.\nIt supports custom bone categories, live previews, and baking procedural motion into actions.",
+    description: "The Tri-AniCat™ Blender 3.6 add-on is a procedural FK animation tool designed for detailed, per-axis control of armature bones. It supports custom bone categories, live previews, and baking procedural motion into actions.",
     image: "assets/images/triAniCat.jpeg",
     gif: "assets/gifs/triAniCat.gif",
     link: "#"
@@ -278,7 +278,7 @@ const productsData = {
   html5Placeholder1: {
     category: "html5",
     title: "HTML5 Programs and Games",
-    description: "This section is reserved for upcoming browser-based tools, interactive programs, and games.\nLive links will be added here as each release goes public.",
+    description: "This section is reserved for upcoming browser-based tools, interactive programs, and games. Live links will be added here as each release goes public.",
     image: "",
     gif: "",
     link: "#",
@@ -320,7 +320,7 @@ const productsData = {
   projectsPlaceholder1: {
     category: "projects",
     title: "Projects / Trailers / News",
-    description: "This section is reserved for coming-soon products, teaser trailers, development clips, and CRUXTAIN news updates.\nVideo clips and summaries will be added here as they are prepared.",
+    description: "This section is reserved for coming-soon products, teaser trailers, development clips, and CRUXTAIN news updates. Video clips and summaries will be added here as they are prepared.",
     image: "",
     gif: "",
     link: "#",
@@ -347,21 +347,18 @@ function getProductsByCategory(categoryKey) {
 
 function createMediaMarkup(prod) {
   if (prod.placeholder || (!prod.image && !prod.gif)) {
-    return `
-      <div class="product-media placeholder-media">
-        <span>Coming Soon</span>
-      </div>
-    `;
+    return `<div class="project-media empty-media"><div class="placeholder-badge">Coming Soon</div></div>`;
   }
 
-  const imageMarkup = prod.image ? `<img src="${prod.image}" alt="${prod.title} preview image">` : "";
-  const gifMarkup = prod.gif ? `<img src="${prod.gif}" alt="${prod.title} animated preview">` : "";
+  const imageMarkup = prod.image
+    ? `<img src="${prod.image}" alt="${prod.title} image" class="project-image">`
+    : "";
 
-  return `
-    <div class="product-media">
-      ${imageMarkup}${gifMarkup}
-    </div>
-  `;
+  const gifMarkup = prod.gif
+    ? `<img src="${prod.gif}" alt="${prod.title} preview" class="project-gif">`
+    : "";
+
+  return `<div class="project-media">${imageMarkup}${gifMarkup}</div>`;
 }
 
 function getInternalDetailHref(prod, id) {
@@ -373,10 +370,10 @@ function getInternalDetailHref(prod, id) {
 
 function createActionMarkup(prod, id, label = "View Product") {
   if (prod.placeholder || !prod.link || prod.link === "#") {
-    return `<span class="coming-soon-label">Coming Soon</span>`;
+    return `<span class="button-like disabled-link">Coming Soon</span>`;
   }
 
-  return `<a class="product-btn" href="${getInternalDetailHref(prod, id)}">${label}</a>`;
+  return `<a href="${getInternalDetailHref(prod, id)}" class="button-link">${label}</a>`;
 }
 
 function displayProduct() {
@@ -391,23 +388,17 @@ function displayProduct() {
   const prod = productsData[activeId];
 
   const externalLink = prod.link && prod.link !== "#"
-    ? `
-      <div class="product-actions">
-        <a class="product-btn secondary" href="${prod.link}" target="_blank" rel="noopener noreferrer">Download / Learn More</a>
-      </div>
-    `
-    : `
-      <div class="product-actions">
-        <span class="coming-soon-label">Coming Soon</span>
-      </div>
-    `;
+    ? `<p><a href="${prod.link}" target="_blank" rel="noopener noreferrer" class="button-link">Download / Learn More</a></p>`
+    : `<p><span class="button-like disabled-link">Coming Soon</span></p>`;
 
   container.innerHTML = `
-    <article class="product-detail-card">
-      <p class="product-category-label">${categoryMeta[prod.category].title}</p>
-      <h2>${prod.title}</h2>
-      <p>${prod.description}</p>
-      ${externalLink}
+    <article class="project single-product-card">
+      <div class="project-info">
+        <p class="category-tag">${categoryMeta[prod.category].title}</p>
+        <h2>${prod.title}</h2>
+        <p>${prod.description}</p>
+        ${externalLink}
+      </div>
       ${createMediaMarkup(prod)}
     </article>
   `;
@@ -438,11 +429,13 @@ function createProductCardMarkup(prod) {
   const label = prod.category === "projects" ? "View Project" : "View Product";
 
   return `
-    <article class="product-card">
+    <article class="project">
       ${createMediaMarkup(prod)}
-      <h3>${prod.title}</h3>
-      <p>${prod.description}</p>
-      ${createActionMarkup(prod, prod.id, label)}
+      <div class="project-info">
+        <h3>${prod.title}</h3>
+        <p>${prod.description}</p>
+        ${createActionMarkup(prod, prod.id, label)}
+      </div>
     </article>
   `;
 }
@@ -472,13 +465,13 @@ function generateAllProducts(searchTerm = "") {
     visibleCount += items.length;
 
     categorySection.innerHTML = `
-      <button class="collapsible-header" type="button" aria-expanded="true">
-        <span class="collapsible-title-wrap">
+      <div class="category-header collapsible-header" role="button" aria-expanded="true" tabindex="0">
+        <div class="category-header-inner">
           <h2>${meta.title}</h2>
           <span class="category-toggle-indicator">▼</span>
-        </span>
+        </div>
         <p>${meta.description}</p>
-      </button>
+      </div>
       <div class="category-grid">
         ${itemsMarkup}
       </div>
@@ -507,10 +500,12 @@ function generateAllProducts(searchTerm = "") {
 
   if (!visibleCount) {
     container.innerHTML = `
-      <div class="empty-state">
-        <h3>No matching products</h3>
-        <p>Try a different search term.</p>
-      </div>
+      <article class="project no-results-card">
+        <div class="project-info">
+          <h3>No matching products</h3>
+          <p>Try a different search term.</p>
+        </div>
+      </article>
     `;
   }
 
@@ -542,9 +537,11 @@ function generateProjectsPage() {
   const itemsMarkup = items.map((prod) => createProductCardMarkup(prod)).join("");
 
   container.innerHTML = `
-    <section class="project-listing">
-      <h2>${meta.title}</h2>
-      <p>${meta.description}</p>
+    <section class="product-category">
+      <div class="category-header">
+        <h2>${meta.title}</h2>
+        <p>${meta.description}</p>
+      </div>
       <div class="category-grid">
         ${itemsMarkup}
       </div>
@@ -554,12 +551,14 @@ function generateProjectsPage() {
 
 function createFeaturedCardMarkup(prod, label) {
   return `
-    <article class="product-card featured-card">
+    <article class="project featured-card">
       ${createMediaMarkup(prod)}
-      <p class="feature-label">${label}</p>
-      <h3>${prod.title}</h3>
-      <p>${prod.description}</p>
-      ${createActionMarkup(prod, prod.id, prod.category === "projects" ? "View Project" : "View Product")}
+      <div class="project-info">
+        <p class="category-tag">${label}</p>
+        <h3>${prod.title}</h3>
+        <p>${prod.description}</p>
+        ${createActionMarkup(prod, prod.id, prod.category === "projects" ? "View Project" : "View Product")}
+      </div>
     </article>
   `;
 }
@@ -585,9 +584,11 @@ function renderHomeFeatured() {
     .join("");
 
   container.innerHTML = cards || `
-    <div class="empty-state">
-      <h3>No featured items yet</h3>
-    </div>
+    <article class="project no-results-card">
+      <div class="project-info">
+        <h3>No featured items yet</h3>
+      </div>
+    </article>
   `;
 }
 
