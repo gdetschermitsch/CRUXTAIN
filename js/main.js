@@ -298,11 +298,11 @@ const productsData = {
 
   devilMayCryMod: {
     category: "videoGameMods",
-    title: "Devil May Cry (DMC)",
-    description: "Placeholder product entry for your Devil May Cry mod page. Add the final download or info link when ready.",
+    title: "Devil May Cry (DMC) Skins",
+    description: "texture replacements for DMC",
     image: "",
     gif: "",
-    link: "#",
+    link: "https://www.nexusmods.com/profile/CRUXTAIN/mods?gameId=281",
     placeholder: true
   },
 
