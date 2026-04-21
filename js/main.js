@@ -99,7 +99,7 @@ const productsData = {
     description: "Tri-UV is a compact UV-tooling addon for Blender 3.6 that automatically unwraps any mesh into a clean six-tile orthographic UV layout, giving each side of the object its own equal, non-overlapping UV island.",
     image: "assets/images/triUV.jpeg",
     gif: "assets/gifs/triUV.gif",
-    link: "#"
+    link: "https://gdetchermitsch.gumroad.com/l/Tri-UV?_gl=1*b0rvdt*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NzY3MzU2ODkkbzQ1JGcxJHQxNzc2NzM1NzIxJGoyOCRsMCRoMA.."
   },
 
   triStamp: {
