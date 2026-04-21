@@ -309,7 +309,7 @@ const productsData = {
   coreKeeperMod: {
     category: "videoGameMods",
     title: "CoreKeeper",
-    description: "Placeholder product entry for your CoreKeeper mod page. Add the final download or info link when ready.",
+    description: "Null",
     image: "",
     gif: "",
     link: "#",
