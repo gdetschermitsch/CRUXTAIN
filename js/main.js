@@ -300,10 +300,10 @@ const productsData = {
     category: "videoGameMods",
     title: "Devil May Cry (DMC) Skins",
     description: "texture replacements for DMC",
-    image: "",
+    image: "assets/images/Reaperskin.jpeg",
     gif: "",
     link: "https://www.nexusmods.com/profile/CRUXTAIN/mods?gameId=281",
-    placeholder: true
+    placeholder: false
   },
 
   coreKeeperMod: {
