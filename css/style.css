@@ -301,3 +301,29 @@ footer {
 .featured-card .project-media {
   align-items: flex-start;
 }
+
+
+/* =====================
+   Collapsible Categories
+===================== */
+.collapsible-header {
+    cursor: pointer;
+    user-select: none;
+}
+
+.category-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-toggle-indicator {
+    font-size: 0.95rem;
+    color: #a6deff;
+    flex-shrink: 0;
+}
+
+.category-grid.collapsed {
+    display: none;
+}
