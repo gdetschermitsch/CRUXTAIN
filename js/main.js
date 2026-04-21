@@ -289,11 +289,11 @@ const productsData = {
   subnauticaMod: {
     category: "videoGameMods",
     title: "Subnautica",
-    description: "Placeholder product entry for your Subnautica mod page. Add the final download or info link when ready.",
+    description: "Subnautica-Concept-art-posters",
     image: "",
     gif: "",
-    link: "#",
-    placeholder: true
+    link: "https://www.nexusmods.com/subnautica/mods/2660",
+    placeholder: false
   },
 
   devilMayCryMod: {
