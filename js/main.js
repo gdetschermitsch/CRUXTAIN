@@ -3,11 +3,7 @@
 // Categorized products + placeholders
 // ========================
 
-const categoryOrder = [
-  "addons",
-  "writings",
-  "html5"
-];
+const categoryOrder = ["addons", "writings", "html5", "videoGameMods"];
 
 const categoryMeta = {
   addons: {
@@ -21,6 +17,10 @@ const categoryMeta = {
   html5: {
     title: "HTML5 Programs and Games",
     description: "Interactive tools, browser programs, and game projects. Placeholder section until live web links are added."
+  },
+  videoGameMods: {
+    title: "Video Game Mods",
+    description: "Game modification projects and released mod downloads for supported titles."
   },
   projects: {
     title: "Projects",
@@ -38,6 +38,7 @@ const productsData = {
     gif: "assets/gifs/triIconMaker.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_IconMaker?_gl=1*ihh42*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcwODQkajUwJGwwJGgw"
   },
+
   triEditTools: {
     category: "addons",
     title: "Tri-EditTools",
@@ -46,6 +47,7 @@ const productsData = {
     gif: "assets/gifs/triEditTools.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_EditTools?_gl=1*1htvkdz*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcwOTEkajQzJGwwJGgw"
   },
+
   triCarver: {
     category: "addons",
     title: "Tri-Carver",
@@ -54,6 +56,7 @@ const productsData = {
     gif: "assets/gifs/triCarver.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_Carver?_gl=1*1w6ibx0*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcxNjIkajYwJGwwJGgw"
   },
+
   triCombine: {
     category: "addons",
     title: "Tri-Combine",
@@ -62,6 +65,7 @@ const productsData = {
     gif: "assets/gifs/triCombine.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_Combine?_gl=1*1xcamjq*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcxODMkajM5JGwwJGgw"
   },
+
   triCurserTools: {
     category: "addons",
     title: "Tri-CursorTools",
@@ -70,6 +74,7 @@ const productsData = {
     gif: "assets/gifs/triCurserTools.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_CursorTools?_gl=1*1xd9lt3*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcxODYkajM2JGwwJGgw"
   },
+
   triModifierLink: {
     category: "addons",
     title: "Tri-ModifierLink",
@@ -78,6 +83,7 @@ const productsData = {
     gif: "assets/gifs/triModifierLink.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_ModifierLink?_gl=1*ipzm2q*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU1NjI5NzckbzYkZzEkdDE3NjU1NjcyNDUkajYwJGwwJGgw"
   },
+
   triPBSDF: {
     category: "addons",
     title: "Tri-PBSDF",
@@ -86,6 +92,7 @@ const productsData = {
     gif: "assets/gifs/triPBSDF.gif",
     link: "https://gdetchermitsch.gumroad.com/l/Tri_PBSDF?_gl=1*d85azw*_ga*MTc0NzQyNTE0NS4xNzYxMjU1NDc4*_ga_6LJN6D94N6*czE3NjU2MDQwMTEkbzExJGcxJHQxNzY1NjA0MzAzJGo2MCRsMCRoMA.."
   },
+
   triUV: {
     category: "addons",
     title: "Tri-UV",
@@ -94,6 +101,7 @@ const productsData = {
     gif: "assets/gifs/triUV.gif",
     link: "#"
   },
+
   triStamp: {
     category: "addons",
     title: "Tri-Stamp",
@@ -102,6 +110,7 @@ const productsData = {
     gif: "assets/gifs/triStamp.gif",
     link: "#"
   },
+
   triEasyNormal: {
     category: "addons",
     title: "Tri-EasyNormal",
@@ -110,6 +119,7 @@ const productsData = {
     gif: "assets/gifs/triEasyNormal.gif",
     link: "#"
   },
+
   triAniCat: {
     category: "addons",
     title: "Tri-AniCat",
@@ -118,6 +128,7 @@ const productsData = {
     gif: "assets/gifs/triAniCat.gif",
     link: "#"
   },
+
   triBoneSet: {
     category: "addons",
     title: "Tri-BoneSet",
@@ -126,6 +137,7 @@ const productsData = {
     gif: "assets/gifs/triBoneSet.gif",
     link: "#"
   },
+
   triIK: {
     category: "addons",
     title: "Tri-IK",
@@ -134,6 +146,7 @@ const productsData = {
     gif: "assets/gifs/triIK.gif",
     link: "#"
   },
+
   triSKM: {
     category: "addons",
     title: "Tri-SKM",
@@ -142,6 +155,7 @@ const productsData = {
     gif: "assets/gifs/triSKM.gif",
     link: "#"
   },
+
   triBluePrint: {
     category: "addons",
     title: "Tri-BluePrint",
@@ -150,6 +164,7 @@ const productsData = {
     gif: "assets/gifs/triBluePrint.gif",
     link: "#"
   },
+
   triMazeGen: {
     category: "addons",
     title: "TRI-MazeGen",
@@ -158,6 +173,7 @@ const productsData = {
     gif: "assets/gifs/triMazeGen.gif",
     link: "#"
   },
+
   triSceneManagers: {
     category: "addons",
     title: "Tri-SceneManagers",
@@ -166,6 +182,7 @@ const productsData = {
     gif: "assets/gifs/triSceneManagers.gif",
     link: "#"
   },
+
   triTeeGen: {
     category: "addons",
     title: "Tri-TreeGen",
@@ -174,6 +191,7 @@ const productsData = {
     gif: "assets/gifs/triTreeGen.gif",
     link: "#"
   },
+
   triAnimaterial: {
     category: "addons",
     title: "Tri-Animaterial",
@@ -182,6 +200,7 @@ const productsData = {
     gif: "assets/gifs/triAnimaterial.gif",
     link: "#"
   },
+
   triBrickBox: {
     category: "addons",
     title: "Tri-BrickBox",
@@ -190,6 +209,7 @@ const productsData = {
     gif: "assets/gifs/triBrickBox.gif",
     link: "#"
   },
+
   triOBJPROP: {
     category: "addons",
     title: "Tri-Obj Prop Manager",
@@ -198,6 +218,7 @@ const productsData = {
     gif: "assets/gifs/triOBJPROP.gif",
     link: "#"
   },
+
   triParticle: {
     category: "addons",
     title: "Tri-Particle",
@@ -216,6 +237,7 @@ const productsData = {
     gif: "assets/gifs/yhwhLogic.gif",
     link: "https://archive.org/details/God_logic_1"
   },
+
   sevenSealsWitness: {
     category: "writings",
     title: "7 Seals Witness",
@@ -224,6 +246,7 @@ const productsData = {
     gif: "assets/gifs/sevenSealsWitness.gif",
     link: "https://archive.org/details/God_logic_2"
   },
+
   triLiteralization: {
     category: "writings",
     title: "Tri Literal Ization – The Heavenly Root Structure Of All Things",
@@ -232,6 +255,7 @@ const productsData = {
     gif: "assets/gifs/triLiteralization.gif",
     link: "https://archive.org/details/God_logic_3"
   },
+
   godLogic: {
     category: "writings",
     title: "God Logic",
@@ -240,6 +264,7 @@ const productsData = {
     gif: "assets/gifs/godLogic.gif",
     link: "https://archive.org/details/God_logic_4"
   },
+
   theologyPhilosophyStories: {
     category: "writings",
     title: "Theology, Philosophy & Stories",
@@ -254,6 +279,37 @@ const productsData = {
     category: "html5",
     title: "HTML5 Programs and Games",
     description: "This section is reserved for upcoming browser-based tools, interactive programs, and games. Live links will be added here as each release goes public.",
+    image: "",
+    gif: "",
+    link: "#",
+    placeholder: true
+  },
+
+  // ===== Video Game Mods =====
+  subnauticaMod: {
+    category: "videoGameMods",
+    title: "Subnautica",
+    description: "Placeholder product entry for your Subnautica mod page. Add the final download or info link when ready.",
+    image: "",
+    gif: "",
+    link: "#",
+    placeholder: true
+  },
+
+  devilMayCryMod: {
+    category: "videoGameMods",
+    title: "Devil May Cry (DMC)",
+    description: "Placeholder product entry for your Devil May Cry mod page. Add the final download or info link when ready.",
+    image: "",
+    gif: "",
+    link: "#",
+    placeholder: true
+  },
+
+  coreKeeperMod: {
+    category: "videoGameMods",
+    title: "CoreKeeper",
+    description: "Placeholder product entry for your CoreKeeper mod page. Add the final download or info link when ready.",
     image: "",
     gif: "",
     link: "#",
@@ -294,8 +350,13 @@ function createMediaMarkup(prod) {
     return `<div class="project-media empty-media"><div class="placeholder-badge">Coming Soon</div></div>`;
   }
 
-  const imageMarkup = prod.image ? `<img src="${prod.image}" alt="${prod.title} image" class="project-image">` : "";
-  const gifMarkup = prod.gif ? `<img src="${prod.gif}" alt="${prod.title} preview" class="project-gif">` : "";
+  const imageMarkup = prod.image
+    ? `<img src="${prod.image}" alt="${prod.title} image" class="project-image">`
+    : "";
+
+  const gifMarkup = prod.gif
+    ? `<img src="${prod.gif}" alt="${prod.title} preview" class="project-gif">`
+    : "";
 
   return `<div class="project-media">${imageMarkup}${gifMarkup}</div>`;
 }
@@ -320,10 +381,12 @@ function displayProduct() {
   const projectId = getQueryParam("project");
   const activeId = productId || projectId;
   const container = document.getElementById("productDisplay") || document.getElementById("projectsContainer");
+
   if (!container || !activeId) return false;
   if (!productsData[activeId]) return false;
 
   const prod = productsData[activeId];
+
   const externalLink = prod.link && prod.link !== "#"
     ? `<p><a href="${prod.link}" target="_blank" rel="noopener noreferrer" class="button-link">Download / Learn More</a></p>`
     : `<p><span class="button-like disabled-link">Coming Soon</span></p>`;
@@ -339,6 +402,7 @@ function displayProduct() {
       ${createMediaMarkup(prod)}
     </article>
   `;
+
   return true;
 }
 
@@ -363,6 +427,7 @@ function productMatchesSearch(prod, searchTerm, categoryKey) {
 
 function createProductCardMarkup(prod) {
   const label = prod.category === "projects" ? "View Project" : "View Product";
+
   return `
     <article class="project">
       ${createMediaMarkup(prod)}
@@ -378,16 +443,18 @@ function createProductCardMarkup(prod) {
 function generateAllProducts(searchTerm = "") {
   const container = document.getElementById("productsContainer");
   const status = document.getElementById("searchStatus");
+
   if (!container) return;
 
   const normalizedSearch = normalizeSearchValue(searchTerm);
   container.innerHTML = "";
-
   let visibleCount = 0;
 
   categoryOrder.forEach((categoryKey) => {
     const meta = categoryMeta[categoryKey];
-    const items = getProductsByCategory(categoryKey).filter((prod) => productMatchesSearch(prod, normalizedSearch, categoryKey));
+    const items = getProductsByCategory(categoryKey).filter((prod) =>
+      productMatchesSearch(prod, normalizedSearch, categoryKey)
+    );
 
     if (!items.length) return;
 
@@ -398,14 +465,35 @@ function generateAllProducts(searchTerm = "") {
     visibleCount += items.length;
 
     categorySection.innerHTML = `
-      <div class="category-header">
-        <h2>${meta.title}</h2>
+      <div class="category-header collapsible-header" role="button" aria-expanded="true" tabindex="0">
+        <div class="category-header-inner">
+          <h2>${meta.title}</h2>
+          <span class="category-toggle-indicator">▼</span>
+        </div>
         <p>${meta.description}</p>
       </div>
       <div class="category-grid">
         ${itemsMarkup}
       </div>
     `;
+
+    const header = categorySection.querySelector(".collapsible-header");
+    const grid = categorySection.querySelector(".category-grid");
+    const indicator = categorySection.querySelector(".category-toggle-indicator");
+
+    const toggleCategory = () => {
+      const isCollapsed = grid.classList.toggle("collapsed");
+      header.setAttribute("aria-expanded", (!isCollapsed).toString());
+      indicator.textContent = isCollapsed ? "▶" : "▼";
+    };
+
+    header.addEventListener("click", toggleCategory);
+    header.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleCategory();
+      }
+    });
 
     container.appendChild(categorySection);
   });
@@ -433,6 +521,7 @@ function initProductSearch() {
   if (!searchInput) return;
 
   generateAllProducts(searchInput.value);
+
   searchInput.addEventListener("input", (event) => {
     generateAllProducts(event.target.value);
   });
@@ -441,7 +530,6 @@ function initProductSearch() {
 function generateProjectsPage() {
   const container = document.getElementById("projectsContainer");
   if (!container) return;
-
   if (displayProduct()) return;
 
   const meta = categoryMeta.projects;
@@ -480,23 +568,36 @@ function renderHomeFeatured() {
   if (!container) return;
 
   const ids = [featuredConfig.current, featuredConfig.project, featuredConfig.product].filter(Boolean);
+
   const cards = ids
     .map((id, index) => {
       const prod = productsData[id];
       if (!prod) return "";
-      const label = index === 0 ? "Current Feature" : (prod.category === "projects" ? "Project Feature" : "Product Feature");
+
+      const label = index === 0
+        ? "Current Feature"
+        : (prod.category === "projects" ? "Project Feature" : "Product Feature");
+
       return createFeaturedCardMarkup({ id, ...prod }, label);
     })
     .filter(Boolean)
     .join("");
 
-  container.innerHTML = cards || `<article class="project no-results-card"><div class="project-info"><h3>No featured items yet</h3></div></article>`;
+  container.innerHTML = cards || `
+    <article class="project no-results-card">
+      <div class="project-info">
+        <h3>No featured items yet</h3>
+      </div>
+    </article>
+  `;
 }
 
 function setActiveNav() {
   const currentPage = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+
   document.querySelectorAll("nav a").forEach((link) => {
     const href = (link.getAttribute("href") || "").toLowerCase();
+
     if (href === currentPage || (currentPage === "" && href === "index.html")) {
       link.classList.add("active-nav");
     }
