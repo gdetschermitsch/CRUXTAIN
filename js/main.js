@@ -290,7 +290,7 @@ const productsData = {
     category: "videoGameMods",
     title: "Subnautica",
     description: "Subnautica-Concept-art-posters",
-    image: "",
+    image: "image: "assets/images/subnauticamod.jpeg"",
     gif: "",
     link: "https://www.nexusmods.com/subnautica/mods/2660",
     placeholder: false
