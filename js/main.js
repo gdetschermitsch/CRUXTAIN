@@ -279,7 +279,7 @@ const productsData = {
     category: "html5",
     title: "SanityVideo",
     description: "Sanity Video is a web browser video editor",
-    image: "",
+    image: "assets/images/SanityVideoTitle.png",
     gif: "",
     link: "https://gdetschermitsch.github.io/SanityVideo/",
     placeholder: false
@@ -288,7 +288,7 @@ const productsData = {
     category: "html5",
     title: "NeutralNote",
     description: "A debate, discourse tool to gather transcript and sound bites from sessions.",
-    image: "",
+    image: "assets/images/NeutralNoteTitle.png",
     gif: "",
     link: "https://gdetschermitsch.github.io/NeutralNote/",
     placeholder: false
@@ -297,7 +297,7 @@ const productsData = {
     category: "html5",
     title: "ViZShow",
     description: "A background Gif, video or preset visualizer.",
-    image: "",
+    image: "assets/images/VizShowTitle.png",
     gif: "",
     link: "https://gdetschermitsch.github.io/ViZShow/",
     placeholder: false
@@ -306,7 +306,7 @@ const productsData = {
     category: "html5",
     title: "StickyMesh",
     description: "A unique 3D modeling web editor.",
-    image: "",
+    image: "assets/images/StickyMesh.png",
     gif: "",
     link: "https://gdetschermitsch.github.io/StickyMesh/",
     placeholder: false
