@@ -297,7 +297,7 @@ const productsData = {
     category: "html5",
     title: "ViZShow",
     description: "A background Gif, video or preset visualizer.",
-    image: "assets/images/VizShowTitle.png",
+    image: "assets/images/ViZShowTitle.png",
     gif: "",
     link: "https://gdetschermitsch.github.io/ViZShow/",
     placeholder: false
