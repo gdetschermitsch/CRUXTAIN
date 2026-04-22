@@ -277,12 +277,39 @@ const productsData = {
   // ===== HTML5 Placeholders =====
   html5Placeholder1: {
     category: "html5",
-    title: "HTML5 Programs and Games",
-    description: "This section is reserved for upcoming browser-based tools, interactive programs, and games. Live links will be added here as each release goes public.",
+    title: "SanityVideo",
+    description: "Sanity Video is a web browser video editor",
     image: "",
     gif: "",
-    link: "#",
-    placeholder: true
+    link: "https://gdetschermitsch.github.io/SanityVideo/",
+    placeholder: false
+  },
+  html5Placeholder2: {
+    category: "html5",
+    title: "NeutralNote",
+    description: "A debate, discourse tool to gather transcript and sound bites from sessions.",
+    image: "",
+    gif: "",
+    link: "https://gdetschermitsch.github.io/NeutralNote/",
+    placeholder: false
+  },
+  html5Placeholder3: {
+    category: "html5",
+    title: "ViZShow",
+    description: "A background Gif, video or preset visualizer.",
+    image: "",
+    gif: "",
+    link: "https://gdetschermitsch.github.io/ViZShow/",
+    placeholder: false
+  },
+  html5Placeholder4: {
+    category: "html5",
+    title: "StickyMesh",
+    description: "A unique 3D modeling web editor.",
+    image: "",
+    gif: "",
+    link: "https://gdetschermitsch.github.io/StickyMesh/",
+    placeholder: false
   },
 
   // ===== Video Game Mods =====
