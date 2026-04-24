@@ -287,7 +287,7 @@ const productsData = {
   html5Placeholder2: {
     category: "html5",
     title: "NeutralNote",
-    description: "A debate, discourse tool to gather transcript and sound bites from sessions.",
+    description: "A debate, discourse tool to gather transcript and gaher sound bites from Discourse and debate sessions.",
     image: "assets/images/NeutralNoteTitle.png",
     gif: "",
     link: "https://gdetschermitsch.github.io/NeutralNote/",
