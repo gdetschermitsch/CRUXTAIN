@@ -307,7 +307,7 @@ const productsData = {
     category: "html5",
     title: "ViZShow Mobile",
     description: "A background Gif, video or preset visualizer for mobile browsers.",
-    image: "assets/images/ViZShowTitle.png",
+    image: "assets/images/ViZShowMobileTitle.png",
     gif: "",
     link: "https://gdetschermitsch.github.io/VizShow-Mobile/",
     placeholder: false
