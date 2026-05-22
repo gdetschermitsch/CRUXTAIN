@@ -346,8 +346,8 @@ const productsData = {
   coreKeeperMod: {
     category: "videoGameMods",
     title: "CoreKeeper",
-    description: "Null",
-    image: "",
+    description: "An upcoming mod for the game CoreKeeper for steam. The addon is a local texture swapper and menu.",
+    image: "assets/images/Project3.png",
     gif: "",
     link: "#",
     placeholder: true
