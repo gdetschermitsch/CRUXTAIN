@@ -302,6 +302,15 @@ const productsData = {
     link: "https://gdetschermitsch.github.io/ViZShow/",
     placeholder: false
   },
+  html5Placeholder3.5: {
+    category: "html5",
+    title: "ViZShow Mobile",
+    description: "A background Gif, video or preset visualizer for mobile browsers.",
+    image: "assets/images/ViZShowTitle.png",
+    gif: "",
+    link: "https://gdetschermitsch.github.io/VizShow-Mobile/",
+    placeholder: false
+  },
   html5Placeholder4: {
     category: "html5",
     title: "StickyMesh",
@@ -357,7 +366,7 @@ const productsData = {
   projectsPlaceholder2: {
     category: "projects",
     title: "Mobile Browser Compatibility",
-    description: "Now the html5 programs and games will begin to include desktop AND mobile browser support. Programs will have browser versions alongside the desktop versions. Programs created for browser compatibility will be found here: List-SanityVideo- not ready, VizShow-Beta ready, NeutralNote- not ready, StickyMesh- not ready.",
+    description: "Now the html5 programs and games will begin to include desktop AND mobile browser support. Programs will have mobile browser versions alongside the desktop versions. Programs created for browser compatibility will be found here: List-SanityVideo- not ready, VizShow-Beta ready, NeutralNote- not ready, StickyMesh- not ready.",
     image: "assets/images/Project2.png",
     gif: "",
     link: "#",
