@@ -348,10 +348,10 @@ const productsData = {
     category: "projects",
     title: "Projects / Trailers / News",
     description: "This section is reserved for coming-soon products, teaser trailers, development clips, and CRUXTAIN news updates. Video clips and summaries will be added here as they are prepared.",
-    image: "",
+    image: "assets/images/Project1.png",
     gif: "",
     link: "#",
-    placeholder: true
+    placeholder: false
   },
   
   projectsPlaceholder2: {
