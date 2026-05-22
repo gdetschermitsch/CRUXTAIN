@@ -302,7 +302,8 @@ const productsData = {
     link: "https://gdetschermitsch.github.io/ViZShow/",
     placeholder: false
   },
-  html5Placeholder3.5: {
+  
+  html5Placeholder3b: {
     category: "html5",
     title: "ViZShow Mobile",
     description: "A background Gif, video or preset visualizer for mobile browsers.",
