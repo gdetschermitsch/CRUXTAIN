@@ -352,7 +352,27 @@ const productsData = {
     gif: "",
     link: "#",
     placeholder: true
-  }
+  },
+  
+  projectsPlaceholder2: {
+    category: "projects",
+    title: "Mobile Browser Compatibility",
+    description: "Now the html5 programs and games will begin to include desktop AND mobile browser support. Programs will have browser versions alongside the desktop versions. Programs created for browser compatibility will be found here: List-SanityVideo- not ready, VizShow-not ready, NeutralNote- not ready, StickyMesh- not ready.",
+    image: "assets/images/Project2.png",
+    gif: "",
+    link: "#",
+    placeholder: true
+  },
+  projectsPlaceholder3: {
+    category: "projects",
+    title: "CoreSwapper",
+    description: "An upcoming mod for the game CoreKeeper for steam. The addon is a local texture swapper and menu. .",
+    image: "assets/images/Project3.png",
+    gif: "",
+    link: "#",
+    placeholder: true
+  },
+  
 };
 
 function getQueryParam(param) {
