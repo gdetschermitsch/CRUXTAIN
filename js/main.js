@@ -357,7 +357,7 @@ const productsData = {
   projectsPlaceholder2: {
     category: "projects",
     title: "Mobile Browser Compatibility",
-    description: "Now the html5 programs and games will begin to include desktop AND mobile browser support. Programs will have browser versions alongside the desktop versions. Programs created for browser compatibility will be found here: List-SanityVideo- not ready, VizShow-not ready, NeutralNote- not ready, StickyMesh- not ready.",
+    description: "Now the html5 programs and games will begin to include desktop AND mobile browser support. Programs will have browser versions alongside the desktop versions. Programs created for browser compatibility will be found here: List-SanityVideo- not ready, VizShow-Beta ready, NeutralNote- not ready, StickyMesh- not ready.",
     image: "assets/images/Project2.png",
     gif: "",
     link: "#",
