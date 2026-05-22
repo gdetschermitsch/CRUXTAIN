@@ -361,7 +361,7 @@ const productsData = {
     image: "assets/images/Project2.png",
     gif: "",
     link: "#",
-    placeholder: true
+    placeholder: false
   },
   projectsPlaceholder3: {
     category: "projects",
@@ -370,7 +370,7 @@ const productsData = {
     image: "assets/images/Project3.png",
     gif: "",
     link: "#",
-    placeholder: true
+    placeholder: false
   },
   
 };
