@@ -391,9 +391,9 @@ function getQueryParam(param) {
 }
 
 const featuredConfig = {
-  current: "triBluePrint",
-  project: "projectsPlaceholder1",
-  product: "triAniCat"
+  current: "ViZShow Mobile",
+  project: "projectsPlaceholder3",
+  product: "Tri-IconMaker"
 };
 
 function getProductsByCategory(categoryKey) {
