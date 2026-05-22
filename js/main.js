@@ -391,9 +391,9 @@ function getQueryParam(param) {
 }
 
 const featuredConfig = {
-  current: "ViZShow Mobile",
+  current: "html5Placeholder3b",
   project: "projectsPlaceholder3",
-  product: "Tri-IconMaker"
+  product: "triIconMaker"
 };
 
 function getProductsByCategory(categoryKey) {
