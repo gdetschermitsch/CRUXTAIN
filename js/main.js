@@ -309,7 +309,7 @@ const productsData = {
     description: "A background Gif, video or preset visualizer for mobile browsers.",
     image: "assets/images/ViZShowMobileTitle.png",
     gif: "",
-    link: "https://gdetschermitsch.github.io/VizShow-Mobile/",
+    link: "https://gdetschermitsch.github.io/VizShowV1Mobile/",
     placeholder: false
   },
   html5Placeholder4: {
