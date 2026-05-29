@@ -400,7 +400,7 @@ function getQueryParam(param) {
 }
 
 const featuredConfig = {
-  current: "html5Placeholder3b",
+  current: "html5Placeholder0",
   project: "projectsPlaceholder3",
   product: "triIconMaker"
 };
