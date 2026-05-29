@@ -281,7 +281,7 @@ const productsData = {
     description: "Gage D multi media portfolio",
     image: "assets/images/PortfolioViewer.png",
     gif: "",
-    link: "https://gdetschermitsch.github.io/PortfolioViewerV1/#audio",
+    link: "https://gdetschermitsch.github.io/PortfolioViewerV1/#home",
     placeholder: false
   },
   html5Placeholder1: {
