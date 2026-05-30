@@ -384,12 +384,12 @@ const productsData = {
   },
   projectsPlaceholder3: {
     category: "projects",
-    title: "CoreSwapper",
-    description: "A Brand new mod for the game CoreKeeper for steam. The mod is a local texture swapper and menu.",
+    title: "NoteKnower",
+    description: "A Brand new program for vocal and instrument training and note detection.",
     image: "assets/images/Project3.png",
     gif: "",
-    link: "https://www.nexusmods.com/corekeeper/mods/5",
-    placeholder: false
+    link: "#",
+    placeholder: true
   },
   
 };
