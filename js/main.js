@@ -389,7 +389,7 @@ const productsData = {
     image: "assets/images/Project3.png",
     gif: "",
     link: "#",
-    placeholder: true
+    placeholder: false
   },
   
 };
