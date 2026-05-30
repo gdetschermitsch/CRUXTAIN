@@ -356,7 +356,7 @@ const productsData = {
     category: "videoGameMods",
     title: "CoreKeeper",
     description: "A Brand new mod for the game CoreKeeper for steam. The mod is a local texture swapper and menu.",
-    image: "assets/images/Project3.png",
+    image: "assets/images/CoreSwapperv1A.png",
     gif: "",
     link: "https://www.nexusmods.com/corekeeper/mods/5",
     placeholder: false
