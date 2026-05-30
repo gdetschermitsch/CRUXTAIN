@@ -385,10 +385,10 @@ const productsData = {
   projectsPlaceholder3: {
     category: "projects",
     title: "CoreSwapper",
-    description: "An upcoming mod for the game CoreKeeper for steam. The addon is a local texture swapper and menu. .",
+    description: "A Brand new mod for the game CoreKeeper for steam. The mod is a local texture swapper and menu.",
     image: "assets/images/Project3.png",
     gif: "",
-    link: "#",
+    link: "https://www.nexusmods.com/corekeeper/mods/5",
     placeholder: false
   },
   
