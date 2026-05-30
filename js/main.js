@@ -402,7 +402,7 @@ function getQueryParam(param) {
 const featuredConfig = {
   current: "html5Placeholder0",
   project: "projectsPlaceholder3",
-  product: "triIconMaker"
+  product: "coreKeeperMod"
 };
 
 function getProductsByCategory(categoryKey) {
