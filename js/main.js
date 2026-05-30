@@ -388,7 +388,7 @@ const productsData = {
     description: "A Brand new program for vocal and instrument training and note detection.",
     image: "assets/images/Project3.png",
     gif: "",
-    link: "#",
+    link: "https://gdetschermitsch.github.io/NoteKnowerV1A/",
     placeholder: false
   },
   
