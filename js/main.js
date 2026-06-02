@@ -3,7 +3,7 @@
 // Categorized products + placeholders
 // ========================
 
-const categoryOrder = ["addons", "writings", "html5", "videoGameMods"];
+const categoryOrder = ["html5", "videoGameMods", "addons", "writings"];
 
 const categoryMeta = {
   addons: {
@@ -529,19 +529,18 @@ function generateAllProducts(searchTerm = "") {
 
     const itemsMarkup = items.map((prod) => createProductCardMarkup(prod)).join("");
     visibleCount += items.length;
-
-    categorySection.innerHTML = `
-      <div class="category-header collapsible-header" role="button" aria-expanded="true" tabindex="0">
-        <div class="category-header-inner">
-          <h2>${meta.title}</h2>
-          <span class="category-toggle-indicator">▼</span>
-        </div>
-        <p>${meta.description}</p>
-      </div>
-      <div class="category-grid">
-        ${itemsMarkup}
-      </div>
-    `;
+categorySection.innerHTML = `
+  <div class="category-header collapsible-header" role="button" aria-expanded="false" tabindex="0">
+    <div class="category-header-inner">
+      <h2>${meta.title}</h2>
+      <span class="category-toggle-indicator">▶</span>
+    </div>
+    <p>${meta.description}</p>
+  </div>
+  <div class="category-grid collapsed">
+    ${itemsMarkup}
+  </div>
+`;
 
     const header = categorySection.querySelector(".collapsible-header");
     const grid = categorySection.querySelector(".category-grid");
