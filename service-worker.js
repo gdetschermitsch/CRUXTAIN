@@ -1,6 +1,6 @@
-const CACHE_NAME = 'melodicaine-v20-mobile-graphics-cache-repair';
+const CACHE_NAME = 'melodicaine-v21-embedded-mobile-controls';
 const APP_SHELL = [
-  './', './index.html', './styles.css?v=20', './app.js?v=20', './manifest.webmanifest',
+  './', './index.html', './styles.css?v=21', './app.js?v=21', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/melodicaine.ico',
   './assets/logo.png', './assets/title.png',
   './assets/ui/add.png', './assets/ui/back.png', './assets/ui/cog.png',
