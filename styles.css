@@ -732,3 +732,42 @@ body { zoom: var(--interface-zoom); }
   .settings-install-copy { align-items: center; }
   .install-state-badge { font-size: 10px; }
 }
+
+
+/* v19: force custom Add/Love artwork on mobile and installed PWAs */
+#loveCurrentButton,
+#addCurrentToQueueButton {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  overflow: visible !important;
+}
+#loveCurrentButton > .ui-control-graphic,
+#addCurrentToQueueButton > .ui-control-graphic {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+@media (max-width: 960px), (hover: none) and (pointer: coarse) {
+  #loveCurrentButton,
+  #addCurrentToQueueButton {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+  }
+  #loveCurrentButton > .ui-control-graphic,
+  #addCurrentToQueueButton > .ui-control-graphic {
+    position: static !important;
+    transform: none !important;
+  }
+}

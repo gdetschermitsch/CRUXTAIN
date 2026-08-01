@@ -859,7 +859,7 @@
     const active = Boolean(state.currentTrack && loved?.trackIds.includes(state.currentTrack.id));
     els.loveCurrentButton.classList.toggle('active', active); els.loveCurrentButton.setAttribute('aria-pressed', String(active));
     const graphic = els.loveCurrentButton.querySelector('img');
-    if (graphic) graphic.src = active ? './assets/ui/loveon.png' : './assets/ui/loveoff.png';
+    if (graphic) graphic.src = active ? './assets/ui/loveon.png?v=19' : './assets/ui/loveoff.png?v=19';
     const label = active ? 'Remove current song from LovedPlaylist' : 'Add current song to LovedPlaylist';
     els.loveCurrentButton.title = label;
     els.loveCurrentButton.setAttribute('aria-label', label);
