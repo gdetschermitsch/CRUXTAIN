@@ -518,7 +518,6 @@
     renderAddMenuPlaylists();
     els.addMenuDialog.classList.remove('hidden');
     els.addCurrentToQueueButton.setAttribute('aria-expanded', 'true');
-    syncAddMenuButton();
     document.body.classList.add('modal-open');
     focusElement(els.addMenuQueueButton);
   }
@@ -527,7 +526,6 @@
     if (!els.addMenuDialog || els.addMenuDialog.classList.contains('hidden')) return;
     els.addMenuDialog.classList.add('hidden');
     els.addCurrentToQueueButton.setAttribute('aria-expanded', 'false');
-    syncAddMenuButton();
     document.body.classList.remove('modal-open');
     focusElement(els.addCurrentToQueueButton);
   }
@@ -859,6 +857,7 @@
     if (!els.loveCurrentButton) return;
     const loved = getPlaylist(LOVED_PLAYLIST_ID);
     const active = Boolean(state.currentTrack && loved?.trackIds.includes(state.currentTrack.id));
+    els.loveCurrentButton.classList.toggle('active', active);
     const label = active ? 'Remove current song from LovedPlaylist' : 'Add current song to LovedPlaylist';
     setButtonGraphic(
       els.loveCurrentButton,
@@ -867,22 +866,6 @@
       label,
       active
     );
-    els.loveCurrentButton.classList.toggle('active', active);
-    els.loveCurrentButton.disabled = !state.currentTrack;
-    syncAddMenuButton();
-  }
-
-  function syncAddMenuButton() {
-    if (!els.addCurrentToQueueButton) return;
-    const expanded = els.addCurrentToQueueButton.getAttribute('aria-expanded') === 'true';
-    setButtonGraphic(
-      els.addCurrentToQueueButton,
-      UI_GRAPHICS.add,
-      state.currentTrack ? 'Add current song' : 'Play a song to use the add menu',
-      state.currentTrack ? 'Open add menu' : 'Add menu unavailable until a song is playing'
-    );
-    els.addCurrentToQueueButton.classList.toggle('active', expanded);
-    els.addCurrentToQueueButton.disabled = !state.currentTrack;
   }
 
   function renderCounts() {
@@ -1351,12 +1334,12 @@
     repeatOff: './assets/ui/repeatoff.png',
     repeatAll: './assets/ui/repeaton.png',
     repeatOne: './assets/ui/repeat1.png',
-    add: './assets/ui/add.png',
-    loveOff: './assets/ui/loveoff.png',
-    loveOn: './assets/ui/loveon.png',
     volumeLow: './assets/ui/volumelow.png',
     volumeMedium: './assets/ui/volumemedium.png',
-    volumeLoud: './assets/ui/volumeloud.png'
+    volumeLoud: './assets/ui/volumeloud.png',
+    add: './assets/ui/add.png',
+    loveOff: './assets/ui/loveoff.png',
+    loveOn: './assets/ui/loveon.png'
   });
 
   function setButtonGraphic(button, source, title, ariaLabel, pressed = null) {
@@ -1562,12 +1545,12 @@
       syncRepeatGraphic();
       syncPlayPauseGraphic();
       syncVolumeGraphic();
-      syncLoveButton();
+    syncLoveButton();
       bindEvents();
       syncDrawerForViewport();
       configureMediaSession();
       configureMobileImportCapabilities();
-      registerPWA();
+    registerPWA();
       await loadLibrary();
       updateStorageEstimate();
       updatePersistenceStatus(false);
