@@ -1,49 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUXTAIN - Home</title>
-    <link rel="stylesheet" href="css/style.css">
-	<link rel="icon" href="CRUXTAIN.ico" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
+  <meta name="theme-color" content="#111318" />
+  <meta name="description" content="Melodicaine is a private, installable music library with embedded album art and synchronized WebVTT lyrics." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Melodicaine" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="icon" href="./icons/melodicaine.ico" sizes="any" />
+  <title>Melodicaine</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-			<li><a href="projects.html">Projects</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="legal.html">Legal</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <img src="assets/images/index_background.jpeg" alt="CruxTain Background" class="header-bg">
-            <h1>CRUXTAIN™</h1>
-            <img src="assets/gifs/logo.gif" alt="CruxTain Logo GIF" class="header-gif">
+  <div id="drawerScrim" class="drawer-scrim" hidden></div>
+  <div class="app-shell">
+    <aside id="librarySidebar" class="sidebar" aria-label="Library menu">
+      <div class="brand">
+        <img class="brand-logo melodicaine-artwork" src="./assets/logo.png" alt="" aria-hidden="true" />
+        <div class="brand-copy">
+          <img class="brand-title melodicaine-artwork" src="./assets/title.png" alt="Melodicaine" />
+          <p>Your music stays on this device.</p>
         </div>
+        <button id="closeDrawerButton" class="drawer-close-button" type="button" aria-label="Close library menu">×</button>
+      </div>
 
-        <p>A Library of CRUXTAIN™ properties for Blender 3.6, UPBGE 3.6 addons, graphic art, illustration, 3D modeling, game development, Storyboarding, Effects creation, books, free theology arts and resources and more to come...</p>
-    </header>
+      <section id="manageDock" class="manage-dock minimized" aria-label="Manage library">
+        <button id="manageDockToggle" class="manage-dock-toggle" type="button" aria-expanded="false" aria-controls="manageDockBody">
+          <span>Manage</span><span class="manage-chevron" aria-hidden="true">›</span>
+        </button>
+        <div id="manageDockBody" class="manage-dock-body">
+          <div class="manage-import-actions">
+            <label id="folderPickerLabel" class="primary-button" for="folderPicker">Import album folder(s)</label>
+            <input id="folderPicker" type="file" accept=".mp3,.vtt,.jpg,.jpeg,.png,.webp,audio/mpeg,text/vtt,image/jpeg,image/png,image/webp" webkitdirectory directory multiple hidden />
+            <label class="secondary-button" for="filePicker">Import individual files</label>
+            <input id="filePicker" type="file" accept=".mp3,.vtt,.jpg,.jpeg,.png,.webp,audio/mpeg,text/vtt,image/jpeg,image/png,image/webp" multiple hidden />
+            <p id="manageMobileHelp" class="manage-mobile-help">On phones where folder selection is unavailable, use “Import individual files.”</p>
+          </div>
 
-    <!-- Featured Section -->
-    <section>
-        <h2>Featured</h2>
-        <div id="featuredProjects" class="featured-grid"></div>
-    </section>
+          <div class="manage-selector">
+            <div class="manage-tabs" role="tablist" aria-label="Items to manage">
+              <button class="manage-tab active" type="button" role="tab" aria-selected="true" data-manage-type="artist">Artists</button>
+              <button class="manage-tab" type="button" role="tab" aria-selected="false" data-manage-type="album">Albums</button>
+              <button class="manage-tab" type="button" role="tab" aria-selected="false" data-manage-type="song">Songs</button>
+            </div>
+            <div class="manage-selection-row">
+              <button id="selectAllManageButton" class="text-button" type="button">Select all</button>
+              <span id="manageSelectionCount" aria-live="polite">0 selected</span>
+            </div>
+            <div id="manageItemList" class="manage-item-list"></div>
+            <button id="deleteSelectedButton" class="danger-button" type="button" disabled>Delete selected</button>
+          </div>
 
-    <!-- Footer -->
-    <footer>
-        <p> 2026 CRUXTAIN™</p>
-    </footer>
+          <div class="manage-storage">
+            <strong>Browser storage</strong>
+            <span id="storageText">Checking…</span>
+            <span id="persistenceText">Persistence: checking…</span>
+            <button id="requestPersistenceButton" class="secondary-button" type="button">Protect local library</button>
+            <button id="clearLibraryButton" class="danger-button" type="button">Clear library</button>
+          </div>
+        </div>
+      </section>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+      <nav class="navigation" aria-label="Library views">
+        <button class="nav-button active" data-view="artists">Artists <span id="artistCount">0</span></button>
+        <button class="nav-button" data-view="albums">Albums <span id="albumCount">0</span></button>
+        <button class="nav-button" data-view="tracks">Tracks <span id="trackCount">0</span></button>
+        <button class="nav-button" data-view="playlists">Playlists <span id="playlistCount">0</span></button>
+        <button class="nav-button" data-view="queue">Queue <span id="queueCount">0</span></button>
+      </nav>
+
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button id="mobileMenuButton" class="mobile-menu-button" type="button" aria-label="Open library menu" aria-expanded="false" aria-controls="librarySidebar">☰</button>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search songs, albums, artists, or folders" autocomplete="off" />
+        </div>
+        <div class="topbar-actions">
+          <button id="settingsButton" class="settings-button graphic-button" type="button" aria-label="Open interface settings" aria-haspopup="dialog" aria-controls="settingsDialog" title="Settings"><img class="ui-control-graphic" src="./assets/ui/cog.png" alt="" aria-hidden="true" /></button>
+          <div id="statusText" class="status-text">Ready</div>
+        </div>
+      </header>
+
+
+      <section id="artistsView" class="view active-view">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Library</p>
+            <h2>Artists</h2>
+          </div>
+        </div>
+        <div id="artistGrid" class="album-grid artist-grid"></div>
+        <div id="artistEmpty" class="empty-state">
+          <div class="empty-icon">♬</div>
+          <h3>No artists yet</h3>
+          <p>Imported MP3 artist metadata will appear here automatically.</p>
+        </div>
+      </section>
+
+      <section id="albumsView" class="view">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Library</p>
+            <h2>Albums</h2>
+          </div>
+          <select id="albumSort" aria-label="Sort albums">
+            <option value="title">Album title</option>
+            <option value="artist">Artist</option>
+            <option value="recent">Recently imported</option>
+          </select>
+        </div>
+        <div id="albumGrid" class="album-grid"></div>
+        <div id="albumEmpty" class="empty-state">
+          <div class="empty-icon">♫</div>
+          <h3>No albums yet</h3>
+          <p>Import one folder containing MP3 files. Matching .vtt lyric files are linked automatically.</p>
+        </div>
+      </section>
+
+      <section id="tracksView" class="view">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Library</p>
+            <h2>All tracks</h2>
+          </div>
+          <button id="playAllButton" class="secondary-button compact">Play all</button>
+        </div>
+        <div class="track-table-wrap">
+          <table class="track-table">
+            <thead>
+              <tr><th>#</th><th>Title</th><th>Artist</th><th>Album</th><th>Lyrics</th><th></th></tr>
+            </thead>
+            <tbody id="trackTableBody"></tbody>
+          </table>
+        </div>
+        <div id="trackEmpty" class="empty-state compact-empty">
+          <h3>No matching tracks</h3>
+        </div>
+      </section>
+
+
+      <section id="playlistsView" class="view">
+        <div class="section-heading playlist-heading">
+          <div>
+            <p class="eyebrow">Library</p>
+            <h2>Playlists</h2>
+          </div>
+          <form id="createPlaylistForm" class="playlist-create-form">
+            <input id="playlistNameInput" type="text" maxlength="60" placeholder="New playlist name" aria-label="New playlist name" required />
+            <button class="primary-button compact" type="submit">Create playlist</button>
+          </form>
+        </div>
+        <div id="playlistGrid" class="album-grid playlist-grid"></div>
+        <div id="playlistEmpty" class="empty-state compact-empty"><h3>No custom playlists yet</h3><p>Create one above, or love a song to use LovedPlaylist.</p></div>
+      </section>
+
+      <section id="playlistDetail" class="album-detail hidden" aria-live="polite">
+        <button id="closePlaylistButton" class="back-button">← Back to playlists</button>
+        <div class="playlist-detail-header">
+          <div>
+            <p class="eyebrow">Playlist</p>
+            <h2 id="playlistDetailTitle">Playlist</h2>
+            <p id="playlistDetailStats">0 tracks</p>
+          </div>
+          <div class="album-actions">
+            <button id="playPlaylistButton" class="primary-button compact">▶ Play</button>
+            <button id="queuePlaylistButton" class="secondary-button compact">+ Queue</button>
+            <button id="renamePlaylistButton" class="secondary-button compact">Rename</button>
+            <button id="deletePlaylistButton" class="danger-button compact">Delete</button>
+          </div>
+        </div>
+        <div id="playlistTrackList" class="queue-list playlist-track-list"></div>
+        <div id="playlistDetailEmpty" class="empty-state compact-empty"><h3>This playlist is empty</h3><p>Use the love button or playlist buttons beside tracks to add songs.</p></div>
+      </section>
+
+      <section id="queueView" class="view">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Playback</p>
+            <h2>Queue</h2>
+          </div>
+          <button id="clearQueueButton" class="secondary-button compact">Clear queue</button>
+        </div>
+        <div id="queueList" class="queue-list"></div>
+        <div id="queueEmpty" class="empty-state compact-empty"><h3>The queue is empty</h3></div>
+      </section>
+
+      <section id="albumDetail" class="album-detail hidden" aria-live="polite">
+        <button id="closeAlbumButton" class="back-button">← Back to albums</button>
+        <div class="album-hero">
+          <div id="detailCover" class="detail-cover">♫</div>
+          <div class="album-meta">
+            <p class="eyebrow">Album</p>
+            <h2 id="detailTitle">Album</h2>
+            <p id="detailArtist">Unknown artist</p>
+            <p id="detailStats">0 tracks</p>
+            <div class="album-actions">
+              <button id="playAlbumButton" class="primary-button compact">▶ Play</button>
+              <button id="queueAlbumButton" class="secondary-button compact">+ Queue</button>
+              <button id="deleteAlbumButton" class="danger-button compact">Delete album</button>
+            </div>
+          </div>
+        </div>
+        <div id="albumTrackList" class="album-track-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <section class="lyrics-panel" id="lyricsPanel" aria-hidden="true">
+    <div class="lyrics-stage">
+      <button id="toggleLyricsButton" class="lyrics-close" aria-label="Close now playing view">×</button>
+      <div class="lyrics-art-column">
+        <p class="eyebrow">Now playing</p>
+        <div id="lyricsCover" class="lyrics-cover">♫</div>
+        <div class="lyrics-song-meta">
+          <h2 id="lyricsTrackTitle">Nothing playing</h2>
+          <p id="lyricsTrackArtist">Import an album to begin</p>
+        </div>
+      </div>
+      <div class="lyrics-reading-column">
+        <div class="lyrics-heading">
+          <p class="eyebrow">Synchronized lyrics</p>
+          <h3>Lyrics</h3>
+          <p>Click any line to jump to it.</p>
+        </div>
+        <div id="lyricsContent" class="lyrics-content">
+          <p class="lyrics-placeholder">Play a track with a matching WebVTT file to see timed lyrics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+    <button type="button" data-mobile-view="artists">Artists</button>
+    <button type="button" data-mobile-view="albums">Albums</button>
+    <button type="button" data-mobile-view="playlists">Playlists</button>
+    <button type="button" data-mobile-view="queue">Queue</button>
+    <button id="mobileManageButton" type="button" aria-controls="librarySidebar manageDockBody">Manage</button>
+  </nav>
+
+  <footer class="player" id="playerBar">
+    <div class="now-playing">
+      <div id="playerCover" class="player-cover">♪</div>
+      <div class="now-playing-text">
+        <strong id="nowTitle">Nothing playing</strong>
+        <span id="nowArtist">Import an album to begin</span>
+      </div>
+    </div>
+
+    <div class="transport">
+      <div class="transport-buttons">
+        <button id="loveCurrentButton" class="graphic-button love-button" type="button" title="Add current song to LovedPlaylist" aria-label="Add current song to LovedPlaylist" aria-pressed="false"><img class="ui-control-graphic" src="./assets/ui/loveoff.png" alt="" aria-hidden="true" /></button>
+        <button id="shuffleButton" class="graphic-button" type="button" title="Shuffle: off" aria-label="Shuffle off" aria-pressed="false"><img class="ui-control-graphic" src="./assets/ui/shuffleoff.png" alt="" aria-hidden="true" /></button>
+        <button id="previousButton" class="graphic-button" type="button" title="Previous track" aria-label="Previous track"><img class="ui-control-graphic" src="./assets/ui/back.png" alt="" aria-hidden="true" /></button>
+        <button id="playPauseButton" class="play-button graphic-button" type="button" title="Play" aria-label="Play"><img class="ui-control-graphic" src="./assets/ui/play.png" alt="" aria-hidden="true" /></button>
+        <button id="nextButton" class="graphic-button" type="button" title="Next track" aria-label="Next track"><img class="ui-control-graphic" src="./assets/ui/forward.png" alt="" aria-hidden="true" /></button>
+        <button id="repeatButton" class="graphic-button" type="button" title="Repeat: off" aria-label="Repeat off" aria-pressed="false"><img class="ui-control-graphic" src="./assets/ui/repeatoff.png" alt="" aria-hidden="true" /></button>
+        <button id="addCurrentToQueueButton" class="graphic-button add-menu-trigger" type="button" title="Add current song" aria-label="Open add menu" aria-haspopup="dialog" aria-controls="addMenuDialog" aria-expanded="false"><img class="ui-control-graphic" src="./assets/ui/add.png" alt="" aria-hidden="true" /></button>
+      </div>
+      <div class="progress-row">
+        <span id="currentTime">0:00</span>
+        <input id="seekBar" type="range" min="0" max="1000" value="0" aria-label="Seek" />
+        <span id="durationTime">0:00</span>
+      </div>
+    </div>
+
+    <div class="player-extras">
+      <button id="showQueueButton" title="Show queue">Queue</button>
+      <button id="showLyricsButton" title="Show lyrics">Lyrics</button>
+      <img id="volumeGraphic" class="volume-graphic" src="./assets/ui/volumeloud.png" alt="Volume level" />
+      <input id="volumeBar" type="range" min="0" max="1" step="0.01" value="0.85" aria-label="Volume" />
+    </div>
+    <audio id="audioPlayer" preload="metadata"></audio>
+  </footer>
+
+  <div id="settingsDialog" class="settings-dialog hidden" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <div class="settings-card">
+      <div class="settings-heading">
+        <div>
+          <p class="eyebrow">Appearance</p>
+          <h3 id="settingsTitle">Interface settings</h3>
+        </div>
+        <button id="closeSettingsButton" class="settings-close-button" type="button" aria-label="Close settings">×</button>
+      </div>
+
+      <div class="settings-preview" aria-hidden="true">
+        <span class="settings-preview-dot"></span>
+        <span>Accent preview</span>
+      </div>
+
+      <section class="settings-install-section" aria-labelledby="installSectionTitle">
+        <div class="settings-install-copy">
+          <div>
+            <p class="eyebrow">Application</p>
+            <h4 id="installSectionTitle">Install Melodicaine</h4>
+          </div>
+          <span id="installStateBadge" class="install-state-badge">Checking…</span>
+        </div>
+        <p id="installHelpText" class="install-help-text">Checking installation support for this device…</p>
+        <button id="installButton" class="primary-button settings-install-button" type="button">Install Melodicaine</button>
+        <div id="iosInstallSteps" class="install-steps hidden" tabindex="-1">
+          <h5>Install on iPhone or iPad</h5>
+          <ol>
+            <li>Open this exact Melodicaine page in <strong>Safari</strong>.</li>
+            <li>Tap Safari’s <strong>Share</strong> button (square with an upward arrow). On some layouts, tap the page menu first, then <strong>Share</strong>.</li>
+            <li>Scroll the action sheet and choose <strong>Add to Home Screen</strong>.</li>
+            <li>Turn on <strong>Open as Web App</strong> when that option is shown, then tap <strong>Add</strong>.</li>
+            <li>Close Safari, launch Melodicaine from its new Home Screen icon, and import music from inside that installed copy.</li>
+          </ol>
+          <div class="ios-storage-warning">
+            <strong>Important iPhone limitation</strong>
+            <p>iOS does not let this web app browse or continuously use a music folder. Folder import is unavailable, and imported audio is copied into Safari-managed website storage. Large permanent libraries require an Android/desktop browser or a native iPhone application.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="settings-controls">
+        <label class="setting-control" for="hueSlider">
+          <span><strong>Hue</strong><output id="hueValue" for="hueSlider">151°</output></span>
+          <input id="hueSlider" type="range" min="0" max="360" step="1" value="151" />
+        </label>
+        <label class="setting-control" for="brightnessSlider">
+          <span><strong>Brightness</strong><output id="brightnessValue" for="brightnessSlider">70%</output></span>
+          <input id="brightnessSlider" type="range" min="25" max="90" step="1" value="70" />
+        </label>
+        <label class="setting-control" for="saturationSlider">
+          <span><strong>Saturation</strong><output id="saturationValue" for="saturationSlider">64%</output></span>
+          <input id="saturationSlider" type="range" min="0" max="100" step="1" value="64" />
+        </label>
+        <label class="setting-control" for="zoomSlider">
+          <span><strong>Interface zoom</strong><output id="zoomValue" for="zoomSlider">100%</output></span>
+          <input id="zoomSlider" type="range" min="75" max="125" step="5" value="100" />
+        </label>
+      </div>
+
+      <div class="settings-actions">
+        <button id="resetSettingsButton" class="secondary-button" type="button">Restore defaults</button>
+        <button id="doneSettingsButton" class="primary-button" type="button">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="addMenuDialog" class="add-menu-dialog hidden" role="dialog" aria-modal="true" aria-labelledby="addMenuTitle">
+    <div class="add-menu-card">
+      <div class="add-menu-heading">
+        <div>
+          <p class="eyebrow">Current track</p>
+          <h3 id="addMenuTitle">Add song</h3>
+          <p id="addMenuTrackName" class="add-menu-track-name">Nothing playing</p>
+        </div>
+        <button id="closeAddMenuButton" class="settings-close-button" type="button" aria-label="Close add menu">×</button>
+      </div>
+      <div class="add-menu-options">
+        <button id="addMenuQueueButton" class="add-menu-option" type="button"><strong>Add to queue</strong><span>Place another copy at the end of the queue.</span></button>
+        <button id="addMenuNewPlaylistButton" class="add-menu-option" type="button"><strong>Add to new playlist</strong><span>Create, name, and add this song in one step.</span></button>
+        <button id="addMenuPlaylistButton" class="add-menu-option" type="button" aria-expanded="false" aria-controls="addMenuPlaylistList"><strong>Add to playlist</strong><span>Choose one of your existing playlists.</span></button>
+        <div id="addMenuPlaylistList" class="add-menu-playlist-list hidden" aria-label="Existing playlists"></div>
+        <button id="addMenuLovedButton" class="add-menu-option" type="button"><strong>Add to LovedPlaylist</strong><span>Save this song to your default loved collection.</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confirmDialog" class="confirm-dialog hidden" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <div class="confirm-card">
+      <h3 id="confirmTitle">Are you sure?</h3>
+      <p id="confirmMessage">Delete the selected items?</p>
+      <div class="confirm-actions">
+        <button id="confirmNoButton" class="secondary-button">No</button>
+        <button id="confirmYesButton" class="danger-button">Yes</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="./app.js"></script>
 </body>
 </html>
