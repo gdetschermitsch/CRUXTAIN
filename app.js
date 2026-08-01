@@ -1304,7 +1304,12 @@
 
   function registerPWA() {
     if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-      navigator.serviceWorker.register('./service-worker.js').catch((error) => console.warn('Service worker registration failed', error));
+      navigator.serviceWorker.register('./service-worker.js?v=20', { updateViaCache: 'none' })
+        .then(async (registration) => {
+          await registration.update();
+          if (registration.waiting) registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+        })
+        .catch((error) => console.warn('Service worker registration failed', error));
     }
     window.addEventListener('beforeinstallprompt', (event) => {
       event.preventDefault();

@@ -13,7 +13,27 @@
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <link rel="icon" href="./icons/melodicaine.ico" sizes="any" />
   <title>Melodicaine</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=20" />
+  <script>
+    // Force iPhone/installed-PWA clients off obsolete cached interface builds.
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', async () => {
+        try {
+          const registration = await navigator.serviceWorker.register('./service-worker.js?v=20', { updateViaCache: 'none' });
+          await registration.update();
+          let refreshing = false;
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (refreshing) return;
+            refreshing = true;
+            location.reload();
+          });
+          if (registration.waiting) registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+        } catch (error) {
+          console.warn('Early service-worker update failed', error);
+        }
+      }, { once: true });
+    }
+  </script>
 </head>
 <body>
   <div id="drawerScrim" class="drawer-scrim" hidden></div>
@@ -256,13 +276,13 @@
 
     <div class="transport">
       <div class="transport-buttons">
-        <button id="loveCurrentButton" class="graphic-button love-button" type="button" title="Add current song to LovedPlaylist" aria-label="Add current song to LovedPlaylist" aria-pressed="false"><img class="ui-control-graphic" src="./assets/ui/loveoff.png?v=19" alt="" aria-hidden="true" /></button>
+        <button id="loveCurrentButton" class="graphic-button love-button" type="button" title="Add current song to LovedPlaylist" aria-label="Add current song to LovedPlaylist" aria-pressed="false"><img class="ui-control-graphic" src="./assets/ui/loveoff.png?v=20" alt="" aria-hidden="true" /></button>
         <button id="shuffleButton" class="graphic-button" type="button" title="Shuffle: off" aria-label="Shuffle off" aria-pressed="false"><img class="ui-control-graphic" src="./assets/ui/shuffleoff.png" alt="" aria-hidden="true" /></button>
         <button id="previousButton" class="graphic-button" type="button" title="Previous track" aria-label="Previous track"><img class="ui-control-graphic" src="./assets/ui/back.png" alt="" aria-hidden="true" /></button>
         <button id="playPauseButton" class="play-button graphic-button" type="button" title="Play" aria-label="Play"><img class="ui-control-graphic" src="./assets/ui/play.png" alt="" aria-hidden="true" /></button>
         <button id="nextButton" class="graphic-button" type="button" title="Next track" aria-label="Next track"><img class="ui-control-graphic" src="./assets/ui/forward.png" alt="" aria-hidden="true" /></button>
         <button id="repeatButton" class="graphic-button" type="button" title="Repeat: off" aria-label="Repeat off" aria-pressed="false"><img class="ui-control-graphic" src="./assets/ui/repeatoff.png" alt="" aria-hidden="true" /></button>
-        <button id="addCurrentToQueueButton" class="graphic-button add-menu-trigger" type="button" title="Add current song" aria-label="Open add menu" aria-haspopup="dialog" aria-controls="addMenuDialog" aria-expanded="false"><img class="ui-control-graphic" src="./assets/ui/add.png?v=19" alt="" aria-hidden="true" /></button>
+        <button id="addCurrentToQueueButton" class="graphic-button add-menu-trigger" type="button" title="Add current song" aria-label="Open add menu" aria-haspopup="dialog" aria-controls="addMenuDialog" aria-expanded="false"><img class="ui-control-graphic" src="./assets/ui/add.png?v=20" alt="" aria-hidden="true" /></button>
       </div>
       <div class="progress-row">
         <span id="currentTime">0:00</span>
@@ -379,6 +399,6 @@
   </div>
 
   <div id="toast" class="toast" role="status"></div>
-  <script src="./app.js"></script>
+  <script src="./app.js?v=20"></script>
 </body>
 </html>

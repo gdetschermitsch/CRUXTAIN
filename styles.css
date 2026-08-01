@@ -771,3 +771,21 @@ body { zoom: var(--interface-zoom); }
     transform: none !important;
   }
 }
+
+/* v20 hard fallback: render custom artwork even if a prior HTML build left glyph text in these buttons. */
+#loveCurrentButton {
+  background: transparent url('./assets/ui/loveoff.png?v=20') center / contain no-repeat !important;
+}
+#loveCurrentButton.active,
+#loveCurrentButton[aria-pressed="true"] {
+  background-image: url('./assets/ui/loveon.png?v=20') !important;
+}
+#addCurrentToQueueButton {
+  background: transparent url('./assets/ui/add.png?v=20') center / contain no-repeat !important;
+}
+#loveCurrentButton > .ui-control-graphic,
+#addCurrentToQueueButton > .ui-control-graphic {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
