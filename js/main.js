@@ -384,7 +384,7 @@ const productsData = {
   projectsPlaceholder3: {
     category: "projects",
     title: "NoteKnower",
-    description: "A Brand new program for vocal and instrument training and note detection.",
+    description: "A Brand new program for vocal and instrument training and note detection. Midi control feature coming soon.",
     image: "assets/images/Project3.png",
     gif: "",
     link: "https://gdetschermitsch.github.io/NoteKnowerV1A/",
