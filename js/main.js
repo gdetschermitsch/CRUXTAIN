@@ -329,7 +329,15 @@ const productsData = {
     link: "https://gdetschermitsch.github.io/StickyMesh/",
     placeholder: false
   },
-
+  html5Placeholder5: {
+    category: "html5",
+    title: "NoteKnower",
+    description: "A Brand new program for vocal and instrument training and note detection. Midi control feature coming soon.",
+    image: "assets/images/Project3.png",
+    gif: "",
+    link: "https://gdetschermitsch.github.io/NoteKnowerV1A/",
+    placeholder: false
+  },
   // ===== Video Game Mods =====
   subnauticaMod: {
     category: "videoGameMods",
