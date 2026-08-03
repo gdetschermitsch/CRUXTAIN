@@ -16,7 +16,7 @@ const categoryMeta = {
   },
   html5: {
     title: "HTML5 Programs and Games",
-    description: "Interactive tools, browser programs, and game projects. Placeholder section until live web links are added."
+    description: "Interactive tools, browser programs, and game projects."
   },
   videoGameMods: {
     title: "Video Game Mods",
@@ -24,7 +24,7 @@ const categoryMeta = {
   },
   projects: {
     title: "Projects",
-    description: "Coming-soon products, trailers, updates, and CRUXTAIN news. Placeholder section until video clips and summaries are added."
+    description: "Coming-soon products, trailers, updates, and CRUXTAIN news."
   }
 };
 
