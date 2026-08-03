@@ -332,7 +332,7 @@ const productsData = {
   html5Placeholder5: {
     category: "html5",
     title: "NoteKnower",
-    description: "A Brand new program for vocal and instrument training and note detection. Midi control feature coming soon.",
+    description: "A program for vocal and instrument training and note detection. Midi control feature coming soon.",
     image: "assets/images/Project3.png",
     gif: "",
     link: "https://gdetschermitsch.github.io/NoteKnowerV1A/",
@@ -391,11 +391,11 @@ const productsData = {
   },
   projectsPlaceholder3: {
     category: "projects",
-    title: "NoteKnower",
-    description: "A Brand new program for vocal and instrument training and note detection. Midi control feature coming soon.",
+    title: "NoteKnowerV2B",
+    description: "A new program for vocal and instrument training, note detection and now Midi control feature.",
     image: "assets/images/Project3.png",
     gif: "",
-    link: "https://gdetschermitsch.github.io/NoteKnowerV1A/",
+    link: "https://gdetschermitsch.github.io/NoteKnowerV2B/",
     placeholder: false
   },
   
