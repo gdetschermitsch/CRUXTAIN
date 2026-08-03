@@ -311,16 +311,6 @@ const productsData = {
     link: "https://gdetschermitsch.github.io/ViZShow/",
     placeholder: false
   },
-  
-  html5Placeholder3b: {
-    category: "html5",
-    title: "ViZShow Mobile",
-    description: "A background Gif, video or preset visualizer for mobile browsers.",
-    image: "assets/images/ViZShowMobileTitle.png",
-    gif: "",
-    link: "https://gdetschermitsch.github.io/VizShowV1Mobile/",
-    placeholder: false
-  },
   html5Placeholder4: {
     category: "html5",
     title: "StickyMesh",
