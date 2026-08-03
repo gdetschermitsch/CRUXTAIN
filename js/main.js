@@ -399,7 +399,7 @@ function getQueryParam(param) {
 }
 
 const featuredConfig = {
-  current: "html5Placeholder0",
+  current: "html5Placeholder00",
   project: "projectsPlaceholder3",
   product: "coreKeeperMod"
 };
