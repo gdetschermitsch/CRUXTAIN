@@ -1,4 +1,4 @@
-t// ========================
+// ========================
 // CRUXTAIN Products JS
 // Categorized products + placeholders
 // ========================
